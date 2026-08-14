@@ -43,7 +43,7 @@ Leo Software is a universal POS platform for restaurants, retail shops, warehous
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Keep the Leo Software website frontend-only for now; do not add backend, API, database, authentication, or form-submission functionality until requested.
 
 ## Gotchas
 
