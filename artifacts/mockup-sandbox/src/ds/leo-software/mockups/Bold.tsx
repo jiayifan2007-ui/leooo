@@ -562,14 +562,28 @@ function Pricing() {
               className="rounded-2xl p-8 flex flex-col"
               style={
                 plan.highlighted
-                  ? { backgroundColor: '#F59E0B' }
+                  ? {
+                      backgroundColor: '#292524',
+                      border: '1px solid #F59E0B',
+                      boxShadow: '0 0 40px rgba(245,158,11,0.15)',
+                    }
                   : { backgroundColor: '#292524', border: '1px solid #44403C' }
               }
             >
               <div className="mb-8">
+                {plan.highlighted ? (
+                  <span
+                    className="inline-block px-2.5 py-1 rounded text-xs font-bold tracking-wide uppercase mb-4"
+                    style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
+                  >
+                    Most popular
+                  </span>
+                ) : (
+                  <div className="mb-4 h-6" />
+                )}
                 <div
                   className="text-xs font-bold tracking-widest uppercase mb-4"
-                  style={{ color: plan.highlighted ? '#92400E' : '#78716C' }}
+                  style={{ color: plan.highlighted ? '#F59E0B' : '#78716C' }}
                 >
                   {plan.name}
                 </div>
@@ -579,7 +593,7 @@ function Pricing() {
                       className="font-black leading-none"
                       style={{
                         fontSize: 'clamp(48px, 6vw, 72px)',
-                        color: plan.highlighted ? '#0C0A09' : '#F59E0B',
+                        color: '#F5F5F4',
                         letterSpacing: '-0.04em',
                       }}
                     >
@@ -601,7 +615,7 @@ function Pricing() {
                   {plan.price !== 'Custom' && (
                     <span
                       className="text-sm font-medium mb-2"
-                      style={{ color: plan.highlighted ? '#92400E' : '#78716C' }}
+                      style={{ color: '#78716C' }}
                     >
                       /mo
                     </span>
@@ -609,7 +623,7 @@ function Pricing() {
                 </div>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: plan.highlighted ? '#92400E' : '#A8A29E' }}
+                  style={{ color: '#78716C' }}
                 >
                   {plan.desc}
                 </p>
@@ -621,9 +635,9 @@ function Pricing() {
                     <Check
                       size={16}
                       className="shrink-0 mt-0.5"
-                      style={{ color: plan.highlighted ? '#0C0A09' : '#F59E0B' }}
+                      style={{ color: '#F59E0B' }}
                     />
-                    <span style={{ color: plan.highlighted ? '#1C1917' : '#F5F5F4' }}>{f}</span>
+                    <span style={{ color: '#A8A29E' }}>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -633,8 +647,12 @@ function Pricing() {
                 className="flex items-center justify-center gap-2 py-4 rounded-xl text-sm font-bold transition-transform hover:scale-105"
                 style={
                   plan.highlighted
-                    ? { backgroundColor: '#0C0A09', color: '#FCD34D' }
-                    : { backgroundColor: '#F59E0B', color: '#0C0A09' }
+                    ? { backgroundColor: '#F59E0B', color: '#0C0A09' }
+                    : {
+                        backgroundColor: 'transparent',
+                        color: '#F5F5F4',
+                        border: '1px solid #44403C',
+                      }
                 }
               >
                 {plan.cta}

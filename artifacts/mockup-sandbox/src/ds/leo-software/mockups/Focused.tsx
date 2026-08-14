@@ -527,14 +527,14 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-[#FFFBEB] py-24">
+    <section id="pricing" className="bg-[#1C1917] py-24 border-t border-[#44403C]">
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="text-center space-y-3 mb-14">
           <p className="text-xs font-bold text-[#F59E0B] tracking-widest uppercase">
             Transparent pricing
           </p>
-          <h2 className="text-4xl font-bold text-[#0C0A09] tracking-tight">
+          <h2 className="text-4xl font-bold text-[#F5F5F4] tracking-tight">
             Pay for what you use. Nothing more.
           </h2>
           <p className="text-base text-[#78716C]">
@@ -550,8 +550,8 @@ function Pricing() {
               className={`
                 relative rounded-2xl p-8 md:p-10 border-2 transition-all
                 ${tier.highlight
-                  ? 'bg-[#1C1917] border-[#F59E0B]'
-                  : 'bg-white border-[#44403C]/30 hover:border-[#F59E0B]/40'
+                  ? 'bg-[#292524] border-[#F59E0B] shadow-[0_0_40px_rgba(245,158,11,0.15)]'
+                  : 'bg-[#292524] border-[#44403C] hover:border-[#F59E0B]/40'
                 }
               `}
             >
@@ -575,14 +575,14 @@ function Pricing() {
                 <div className="flex items-end gap-1 mb-2">
                   <span
                     className={`text-5xl font-bold tracking-tight ${
-                      tier.highlight ? 'text-[#F5F5F4]' : 'text-[#0C0A09]'
+                      'text-[#F5F5F4]'
                     }`}
                   >
                     {tier.price}
                   </span>
                   <span
                     className={`text-base pb-1.5 ${
-                      tier.highlight ? 'text-[#A8A29E]' : 'text-[#78716C]'
+                      'text-[#78716C]'
                     }`}
                   >
                     {tier.period}
@@ -590,7 +590,7 @@ function Pricing() {
                 </div>
                 <p
                   className={`text-sm ${
-                    tier.highlight ? 'text-[#A8A29E]' : 'text-[#78716C]'
+                    'text-[#78716C]'
                   }`}
                 >
                   {tier.description}
@@ -608,7 +608,7 @@ function Pricing() {
                     />
                     <span
                       className={`text-sm ${
-                        tier.highlight ? 'text-[#F5F5F4]' : 'text-[#44403C]'
+                        'text-[#A8A29E]'
                       }`}
                     >
                       {f}
@@ -624,7 +624,7 @@ function Pricing() {
                   flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold transition-colors
                   ${tier.highlight
                     ? 'bg-[#F59E0B] text-[#0C0A09] hover:bg-[#D97706]'
-                    : 'bg-[#1C1917] text-[#F5F5F4] hover:bg-[#0C0A09]'
+                    : 'bg-transparent text-[#F5F5F4] border border-[#44403C] hover:border-[#F59E0B] hover:text-[#F59E0B]'
                   }
                 `}
               >
