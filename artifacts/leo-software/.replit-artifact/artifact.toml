@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/leo-software/"
+title = "Leo Software Design System"
+description = "Design system for Leo Software — a point-of-sale platform serving restaurants, shops, warehouses, and many other businesses. Warm Operator aesthetic: dark charcoal surfaces with amber accents, grounded and built for real-world operators."
+version = "1.0.0"
+id = "artifacts/leo-software"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/leo-software/" ]
+localPort = 22898
+
+[services.development]
+run = "pnpm --filter @workspace/leo-software run dev"
+
+[services.env]
+PORT = "22898"
+BASE_PATH = "/leo-software/"
