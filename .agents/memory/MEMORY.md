@@ -1,0 +1,1 @@
+- [Leo Software site structure](leo-site-structure.md) — leo-site maps Bold→homepage, Focused→/product, Grounded→/pricing; target domain leooo.pt; frontend-only.

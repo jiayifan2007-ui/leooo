@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Leo Software"
+description = "The marketing site for Leo Software — a point-of-sale platform for restaurants, retail shops, and warehouses. A frontend-only site featuring a Bold Command landing page, a Focused product-detail page, and Grounded high-contrast pricing. Built on the Leo Software design system (Warm Operator)."
+version = "1.0.0"
+id = "artifacts/leo-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20368
+
+[services.development]
+run = "pnpm --filter @workspace/leo-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/leo-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/leo-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20368"
+BASE_PATH = "/"

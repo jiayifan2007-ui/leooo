@@ -1,0 +1,5 @@
+/* Consume the Leo Software design system (Warm Operator) theme.
+ * This import pulls in Tailwind, tw-animate-css, the typography plugin,
+ * this package's token theme, component source registration, and base/utilities.
+ * App-specific non-theme CSS goes below the import. */
+@import "@workspace/leo-software/styles.css";
