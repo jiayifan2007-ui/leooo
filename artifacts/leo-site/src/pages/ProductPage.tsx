@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'wouter';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import RevealItem from '@/components/RevealItem';
 import {
   ArrowRight,
@@ -42,6 +44,7 @@ function useReveal(threshold = 0.15) {
 // ─── Hero ────────────────────────────────────────────────────────────────────
 
 function Hero() {
+  const { t } = useTranslation();
   const { ref, visible } = useReveal(0.05);
   return (
     <section style={{ backgroundColor: '#FFFBEB' }}>
@@ -70,7 +73,7 @@ function Hero() {
                 className="text-xs font-semibold tracking-wide uppercase"
                 style={{ color: '#92400E' }}
               >
-                One system. Any business.
+                {t('product.hero.badge')}
               </span>
             </div>
 
@@ -83,14 +86,13 @@ function Hero() {
               }}
               data-testid="text-product-headline"
             >
-              Clarity drives
+              {t('product.hero.headline1')}
               <br />
-              <span style={{ color: '#F59E0B' }}>better business.</span>
+              <span style={{ color: '#F59E0B' }}>{t('product.hero.headline2')}</span>
             </h1>
 
             <p className="text-lg leading-relaxed max-w-lg" style={{ color: '#78716C' }}>
-              Leo Software brings orders, inventory, payments, and staff into one
-              clean system — so you can focus on what matters, not the tools.
+              {t('product.hero.desc')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -100,7 +102,7 @@ function Hero() {
                 style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
                 data-testid="button-product-trial"
               >
-                Start for free
+                {t('product.hero.trial')}
                 <ArrowRight size={16} />
               </Link>
               <a
@@ -109,13 +111,13 @@ function Hero() {
                 style={{ borderColor: '#44403C', color: '#1C1917' }}
                 data-testid="link-product-features"
               >
-                See how it works
+                {t('product.hero.seeHow')}
                 <ChevronRight size={16} />
               </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-6 pt-2">
-              {['No credit card required', 'Setup in under 5 minutes', 'Cancel anytime'].map(
+              {(t('product.hero.points', { returnObjects: true }) as unknown as string[]).map(
                 (item) => (
                   <div key={item} className="flex items-center gap-1.5">
                     <Check
@@ -151,11 +153,12 @@ function Hero() {
 // ─── Social Proof Bar ────────────────────────────────────────────────────────
 
 function SocialProofBar() {
+  const { t } = useTranslation();
   const categories = [
-    { icon: UtensilsCrossed, label: 'Restaurants' },
-    { icon: ShoppingCart, label: 'Retail Shops' },
-    { icon: Package, label: 'Warehouses' },
-    { icon: Zap, label: 'Food Trucks' },
+    { icon: UtensilsCrossed, label: t('product.socialCategories.restaurants') },
+    { icon: ShoppingCart, label: t('product.socialCategories.retailShops') },
+    { icon: Package, label: t('product.socialCategories.warehouses') },
+    { icon: Zap, label: t('product.socialCategories.foodTrucks') },
   ];
 
   return (
@@ -170,7 +173,7 @@ function SocialProofBar() {
             style={{ color: '#A8A29E' }}
             data-testid="text-social-proof"
           >
-            4,200+ businesses trust Leo Software
+            {t('product.socialProof')}
           </span>
 
           <div className="h-px w-full sm:w-px sm:h-5" style={{ backgroundColor: '#44403C' }} />
@@ -200,28 +203,11 @@ function SocialProofBar() {
 // ─── Features ────────────────────────────────────────────────────────────────
 
 function Features() {
+  const { t } = useTranslation();
   const features = [
-    {
-      icon: BarChart3,
-      title: 'Live analytics, always on.',
-      description:
-        'Your dashboard updates in real time — sales by hour, top items, staff performance, and daily revenue. No end-of-day report needed. The picture is always current.',
-      link: 'Explore the dashboard',
-    },
-    {
-      icon: CreditCard,
-      title: 'Payments without the friction.',
-      description:
-        'Accept card, cash, and mobile payments in one flow. Split bills, process refunds, and reconcile automatically. Leo handles the transaction so your team handles the guest.',
-      link: 'See payment features',
-    },
-    {
-      icon: MapPin,
-      title: 'Multiple locations, one view.',
-      description:
-        'Managing two venues or twenty, Leo gives you a single control panel. Compare performance across sites, push menu updates everywhere at once, and set location-specific rules.',
-      link: 'Learn about multi-location',
-    },
+    { icon: BarChart3, title: t('product.features.f1title'), description: t('product.features.f1desc'), link: t('product.features.f1link') },
+    { icon: CreditCard, title: t('product.features.f2title'), description: t('product.features.f2desc'), link: t('product.features.f2link') },
+    { icon: MapPin, title: t('product.features.f3title'), description: t('product.features.f3desc'), link: t('product.features.f3link') },
   ];
 
   return (
@@ -233,14 +219,14 @@ function Features() {
             className="text-xs font-bold tracking-widest uppercase"
             style={{ color: '#F59E0B' }}
           >
-            What Leo does
+            {t('product.features.eyebrow')}
           </p>
           <h2
             className="text-4xl font-bold tracking-tight"
             style={{ color: '#0C0A09' }}
             data-testid="text-features-headline"
           >
-            Everything in one place. Nothing in the way.
+            {t('product.features.headline')}
           </h2>
         </div>
 
@@ -297,53 +283,31 @@ function Features() {
 
 // ─── Industry Tabs ───────────────────────────────────────────────────────────
 
-const industryContent: Record<
-  Industry,
-  { headline: string; features: string[]; note: string }
-> = {
-  restaurant: {
-    headline: 'Built for kitchens that never stop.',
-    features: [
-      'Table and floor-plan management',
-      'Course-by-course ticket routing to kitchen display',
-      'Split bills and custom modifiers',
-      'Staff shift tracking and tipping reports',
-      'Real-time allergen and menu updates',
-    ],
-    note: 'Used by sit-down restaurants, cafes, and bar and grill operations.',
-  },
-  shop: {
-    headline: 'Retail-ready from day one.',
-    features: [
-      'Barcode scan and fast cart checkout',
-      'Inventory reorder alerts and supplier sync',
-      'Customer loyalty and discount programs',
-      'Multi-variant product management (size, color)',
-      'End-of-day sales reconciliation',
-    ],
-    note: 'Ideal for boutiques, convenience stores, and specialty retailers.',
-  },
-  warehouse: {
-    headline: 'Stock under control, always.',
-    features: [
-      'Inbound goods receiving and batch scanning',
-      'Location-based bin and shelf tracking',
-      'Low-stock and expiry date alerts',
-      'Purchase order management',
-      'Full audit trail for every movement',
-    ],
-    note: 'Designed for fulfilment centres, food distributors, and stockrooms.',
-  },
-};
+type IndustryContent = { headline: string; features: string[]; note: string };
+
+function getIndustryContent(t: TFunction, key: string): IndustryContent {
+  return {
+    headline: t(`product.industries.${key}Headline`),
+    features: t(`product.industries.${key}Features`, { returnObjects: true }) as unknown as string[],
+    note: t(`product.industries.${key}Note`),
+  };
+}
 
 function IndustryTabs() {
+  const { t } = useTranslation();
   const [active, setActive] = useState<Industry>('restaurant');
   const { ref, visible } = useReveal(0.1);
 
+  const industryContent: Record<Industry, IndustryContent> = {
+    restaurant: getIndustryContent(t, 'rest'),
+    shop: getIndustryContent(t, 'shop'),
+    warehouse: getIndustryContent(t, 'warehouse'),
+  };
+
   const tabs: { id: Industry; icon: typeof UtensilsCrossed; label: string }[] = [
-    { id: 'restaurant', icon: UtensilsCrossed, label: 'Restaurant' },
-    { id: 'shop', icon: ShoppingCart, label: 'Shop' },
-    { id: 'warehouse', icon: Package, label: 'Warehouse' },
+    { id: 'restaurant', icon: UtensilsCrossed, label: t('product.industries.restaurant') },
+    { id: 'shop', icon: ShoppingCart, label: t('product.industries.shop') },
+    { id: 'warehouse', icon: Package, label: t('product.industries.warehouse') },
   ];
 
   const content = industryContent[active];
@@ -364,14 +328,14 @@ function IndustryTabs() {
             className="text-xs font-bold tracking-widest uppercase"
             style={{ color: '#F59E0B' }}
           >
-            Built for your industry
+            {t('product.industries.eyebrow')}
           </p>
           <h2
             className="text-4xl font-bold tracking-tight"
             style={{ color: '#0C0A09' }}
             data-testid="text-industries-headline"
           >
-            One platform. Every operation.
+            {t('product.industries.headline')}
           </h2>
         </div>
 
@@ -450,6 +414,7 @@ function IndustryTabs() {
 // ─── Testimonial ─────────────────────────────────────────────────────────────
 
 function Testimonial() {
+  const { t } = useTranslation();
   const { ref, visible } = useReveal(0.1);
   return (
     <section style={{ backgroundColor: '#FFFBEB' }} className="py-24">
@@ -487,9 +452,7 @@ function Testimonial() {
             style={{ color: '#F5F5F4' }}
             data-testid="text-testimonial-quote"
           >
-            "Before Leo, we were managing our kitchen, inventory, and payments
-            across three different tools. Now it's one screen. Our close-out time
-            dropped from forty minutes to under ten."
+            "{t('product.testimonial.quote')}"
           </blockquote>
 
           {/* Attribution */}
@@ -504,10 +467,10 @@ function Testimonial() {
             </div>
             <div>
               <p className="font-semibold" style={{ color: '#F5F5F4' }}>
-                Maria Haugen
+                {t('product.testimonial.name')}
               </p>
               <p className="text-sm" style={{ color: '#78716C' }}>
-                Owner, Brygga Kitchen — Oslo, Norway
+                {t('product.testimonial.role')}
               </p>
             </div>
           </div>
@@ -520,6 +483,7 @@ function Testimonial() {
 // ─── CTA Banner ──────────────────────────────────────────────────────────────
 
 function CTABanner() {
+  const { t } = useTranslation();
   return (
     <section style={{ backgroundColor: '#1C1917' }} className="py-24">
       <div className="max-w-3xl mx-auto px-6 text-center space-y-8">
@@ -535,7 +499,7 @@ function CTABanner() {
             className="text-xs font-semibold tracking-wide uppercase"
             style={{ color: '#A8A29E' }}
           >
-            Get started today
+            {t('product.cta.eyebrow')}
           </span>
         </div>
 
@@ -544,14 +508,13 @@ function CTABanner() {
           style={{ fontSize: 'clamp(32px, 6vw, 56px)', color: '#F5F5F4' }}
           data-testid="text-product-cta-headline"
         >
-          Less complexity.
+          {t('product.cta.headline1')}
           <br />
-          <span style={{ color: '#FCD34D' }}>More business.</span>
+          <span style={{ color: '#FCD34D' }}>{t('product.cta.headline2')}</span>
         </h2>
 
         <p className="text-lg leading-relaxed" style={{ color: '#A8A29E' }}>
-          Join 4,200+ businesses that replaced spreadsheets and separate tools
-          with one focused system. Free for 14 days.
+          {t('product.cta.desc')}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -561,7 +524,7 @@ function CTABanner() {
             style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
             data-testid="button-product-final-cta"
           >
-            Start your free trial
+            {t('product.cta.button')}
             <ArrowRight size={16} />
           </Link>
           <a
@@ -570,12 +533,12 @@ function CTABanner() {
             style={{ borderColor: '#44403C', color: '#A8A29E' }}
             data-testid="link-product-read-more"
           >
-            Read the docs
+            {t('product.cta.docs')}
           </a>
         </div>
 
         <p className="text-xs" style={{ color: '#78716C' }}>
-          No credit card required. Cancel anytime. GDPR compliant.
+          {t('product.cta.fineprint')}
         </p>
       </div>
     </section>

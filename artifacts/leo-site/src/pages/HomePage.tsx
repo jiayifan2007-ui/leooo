@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
+import { useTranslation } from 'react-i18next';
 import RevealItem from '@/components/RevealItem';
 import {
   ArrowRight,
@@ -41,6 +42,7 @@ function useReveal(threshold = 0.15) {
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
+  const { t } = useTranslation();
   return (
     <section
       className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden pt-20"
@@ -75,7 +77,7 @@ function Hero() {
             className="text-xs font-bold tracking-widest uppercase"
             style={{ color: '#0C0A09' }}
           >
-            Point of Sale, Reinvented
+            {t('home.hero.badge')}
           </span>
         </div>
 
@@ -89,11 +91,11 @@ function Hero() {
           }}
           data-testid="text-hero-headline"
         >
-          Command
+          {t('home.hero.headline1')}
           <br />
-          <span style={{ color: '#0C0A09' }}>Your</span>
+          <span style={{ color: '#0C0A09' }}>{t('home.hero.headline2')}</span>
           <br />
-          Business.
+          {t('home.hero.headline3')}
         </h1>
 
         <p
@@ -101,8 +103,7 @@ function Hero() {
           style={{ color: '#292524' }}
           data-testid="text-hero-sub"
         >
-          One system for restaurants, retail, and warehouses. Real-time inventory,
-          payments, and analytics — all in one place.
+          {t('home.hero.sub')}
         </p>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -112,7 +113,7 @@ function Hero() {
             style={{ backgroundColor: '#0C0A09', color: '#FCD34D' }}
             data-testid="button-hero-cta"
           >
-            Get started free
+            {t('home.hero.cta')}
             <ArrowRight size={20} />
           </Link>
           <Link
@@ -121,7 +122,7 @@ function Hero() {
             style={{ color: '#0C0A09' }}
             data-testid="link-hero-demo"
           >
-            Watch demo
+            {t('home.hero.demo')}
             <ChevronRight size={18} />
           </Link>
         </div>
@@ -130,7 +131,7 @@ function Hero() {
         <div className="mt-20 flex items-center gap-3" style={{ color: '#0C0A09' }}>
           <div className="w-12 h-px" style={{ backgroundColor: '#0C0A09' }} />
           <span className="text-xs font-bold tracking-widest uppercase opacity-60">
-            Scroll to explore
+            {t('home.hero.scroll')}
           </span>
         </div>
       </div>
@@ -141,12 +142,13 @@ function Hero() {
 // ─── Stat Strip ───────────────────────────────────────────────────────────────
 
 function StatStrip() {
+  const { t } = useTranslation();
   const { ref, visible } = useReveal();
   const stats = [
-    { value: '4,200+', label: 'Businesses worldwide' },
-    { value: '99.9%', label: 'Uptime guarantee' },
-    { value: '€2M+', label: 'Processed daily' },
-    { value: '3 min', label: 'Average setup time' },
+    { value: '4,200+', label: t('home.stats.biz') },
+    { value: '99.9%', label: t('home.stats.uptime') },
+    { value: '€2M+', label: t('home.stats.processed') },
+    { value: '3 min', label: t('home.stats.setup') },
   ];
 
   return (
@@ -197,28 +199,13 @@ function StatStrip() {
 // ─── Feature Showcase ─────────────────────────────────────────────────────────
 
 function FeatureShowcase() {
+  const { t } = useTranslation();
   const { ref, visible } = useReveal();
   const features = [
-    {
-      num: '01',
-      title: 'Real-time inventory tracking',
-      desc: 'Stock levels update the moment a sale is made. Get low-stock alerts, automatic reorder triggers, and full audit trails across every location.',
-    },
-    {
-      num: '02',
-      title: 'Unified payment processing',
-      desc: 'Card, cash, mobile, and buy-now-pay-later — all routed through a single integration. Reconciliation happens automatically at end of day.',
-    },
-    {
-      num: '03',
-      title: 'Multi-location management',
-      desc: 'One dashboard to rule them all. Transfer stock between branches, compare performance, and manage staff permissions site by site.',
-    },
-    {
-      num: '04',
-      title: 'Live analytics dashboard',
-      desc: 'Revenue, margins, footfall, and basket size — updated in real time. Export to CSV or connect your BI tool via our open API.',
-    },
+    { num: '01', title: t('home.features.f1title'), desc: t('home.features.f1desc') },
+    { num: '02', title: t('home.features.f2title'), desc: t('home.features.f2desc') },
+    { num: '03', title: t('home.features.f3title'), desc: t('home.features.f3desc') },
+    { num: '04', title: t('home.features.f4title'), desc: t('home.features.f4desc') },
   ];
 
   return (
@@ -229,7 +216,7 @@ function FeatureShowcase() {
             className="text-xs font-bold tracking-widest uppercase mb-4 transition-all duration-700"
             style={{ color: '#F59E0B', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)' }}
           >
-            Built for the real world
+            {t('home.features.eyebrow')}
           </p>
           <h2
             className="font-black leading-none transition-all duration-700 delay-100"
@@ -241,11 +228,11 @@ function FeatureShowcase() {
               transform: visible ? 'translateY(0)' : 'translateY(24px)',
             }}
           >
-            Every feature
+            {t('home.features.headline1')}
             <br />
-            <span style={{ color: '#F59E0B' }}>you actually</span>
+            <span style={{ color: '#F59E0B' }}>{t('home.features.headline2')}</span>
             <br />
-            need.
+            {t('home.features.headline3')}
           </h2>
         </div>
 
@@ -295,25 +282,39 @@ function FeatureShowcase() {
 // ─── Industries ───────────────────────────────────────────────────────────────
 
 function Industries() {
+  const { t } = useTranslation();
+  const restaurantRow = t('home.industries.restaurant.items', { returnObjects: true }) as {
+    label: string;
+    desc: string;
+  }[];
+  const retailRow = t('home.industries.retail.items', { returnObjects: true }) as {
+    label: string;
+    desc: string;
+  }[];
+  const warehouseRow = t('home.industries.warehouse.items', { returnObjects: true }) as {
+    label: string;
+    desc: string;
+  }[];
+
   const restaurantItems = [
-    { icon: <UtensilsCrossed size={20} />, label: 'Table and order management', desc: 'Visual floor plan, covers, and real-time status.' },
-    { icon: <CreditCard size={20} />, label: 'Split bills and tab handling', desc: 'By seat, by item, or custom split — settled in seconds.' },
-    { icon: <BarChart3 size={20} />, label: 'Kitchen display system', desc: 'Orders fire directly to prep stations, no paper tickets.' },
-    { icon: <Users size={20} />, label: 'Staff scheduling', desc: 'Shift management and tip pooling built in.' },
+    { icon: <UtensilsCrossed size={20} />, label: restaurantRow[0].label, desc: restaurantRow[0].desc },
+    { icon: <CreditCard size={20} />, label: restaurantRow[1].label, desc: restaurantRow[1].desc },
+    { icon: <BarChart3 size={20} />, label: restaurantRow[2].label, desc: restaurantRow[2].desc },
+    { icon: <Users size={20} />, label: restaurantRow[3].label, desc: restaurantRow[3].desc },
   ];
 
   const retailItems = [
-    { icon: <ShoppingCart size={20} />, label: 'Cart and checkout', desc: 'Barcode scan, manual entry, or QR — every flow covered.' },
-    { icon: <Package size={20} />, label: 'Smart inventory', desc: 'Auto-replenishment rules and supplier integrations.' },
-    { icon: <MapPin size={20} />, label: 'Multi-location stock', desc: 'Transfer stock between stores with two taps.' },
-    { icon: <Star size={20} />, label: 'Loyalty and discounts', desc: 'Points, vouchers, and membership tiers out of the box.' },
+    { icon: <ShoppingCart size={20} />, label: retailRow[0].label, desc: retailRow[0].desc },
+    { icon: <Package size={20} />, label: retailRow[1].label, desc: retailRow[1].desc },
+    { icon: <MapPin size={20} />, label: retailRow[2].label, desc: retailRow[2].desc },
+    { icon: <Star size={20} />, label: retailRow[3].label, desc: retailRow[3].desc },
   ];
 
   const warehouseItems = [
-    { icon: <Package size={20} />, label: 'Goods receipt and put-away', desc: 'PO matching, zone allocation, and batch tracking.' },
-    { icon: <BarChart3 size={20} />, label: 'Real-time stock movements', desc: 'Every pick, transfer, and adjustment logged instantly.' },
-    { icon: <Zap size={20} />, label: 'Barcode and RFID scanning', desc: 'Works with existing scanners and mobile devices.' },
-    { icon: <Users size={20} />, label: 'Access control by role', desc: 'Supervisors, pickers, and managers — granular permissions.' },
+    { icon: <Package size={20} />, label: warehouseRow[0].label, desc: warehouseRow[0].desc },
+    { icon: <BarChart3 size={20} />, label: warehouseRow[1].label, desc: warehouseRow[1].desc },
+    { icon: <Zap size={20} />, label: warehouseRow[2].label, desc: warehouseRow[2].desc },
+    { icon: <Users size={20} />, label: warehouseRow[3].label, desc: warehouseRow[3].desc },
   ];
 
   return (
@@ -329,7 +330,7 @@ function Industries() {
                   className="text-xs font-bold tracking-widest uppercase"
                   style={{ color: '#F59E0B' }}
                 >
-                  Restaurants and Cafes
+                  {t('home.industries.restaurant.eyebrow')}
                 </span>
               </div>
               <h2
@@ -341,18 +342,17 @@ function Industries() {
                 }}
                 data-testid="text-industry-restaurant"
               >
-                Floor to
+                {t('home.industries.restaurant.headline1')}
                 <br />
-                kitchen,
+                {t('home.industries.restaurant.headline2')}
                 <br />
-                <span style={{ color: '#F59E0B' }}>in sync.</span>
+                <span style={{ color: '#F59E0B' }}>{t('home.industries.restaurant.headline3')}</span>
               </h2>
               <p
                 className="text-lg leading-relaxed mb-10"
                 style={{ color: '#78716C' }}
               >
-                Table management, split bills, kitchen display integration, and
-                course-by-course ordering — built for how restaurants actually work.
+                {t('home.industries.restaurant.desc')}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
@@ -412,7 +412,7 @@ function Industries() {
                   className="text-xs font-bold tracking-widest uppercase"
                   style={{ color: '#D97706' }}
                 >
-                  Retail and Shop
+                  {t('home.industries.retail.eyebrow')}
                 </span>
               </div>
               <h2
@@ -424,18 +424,17 @@ function Industries() {
                 }}
                 data-testid="text-industry-retail"
               >
-                Sell more,
+                {t('home.industries.retail.headline1')}
                 <br />
-                stock
+                {t('home.industries.retail.headline2')}
                 <br />
-                <span style={{ color: '#D97706' }}>smarter.</span>
+                <span style={{ color: '#D97706' }}>{t('home.industries.retail.headline3')}</span>
               </h2>
               <p
                 className="text-lg leading-relaxed mb-10"
                 style={{ color: '#44403C' }}
               >
-                From boutique to multi-chain retail. Leo's checkout flow is
-                frictionless, and the inventory engine never lets you oversell.
+                {t('home.industries.retail.desc')}
               </p>
             </div>
           </div>
@@ -453,7 +452,7 @@ function Industries() {
                   className="text-xs font-bold tracking-widest uppercase"
                   style={{ color: '#F59E0B' }}
                 >
-                  Warehouse and Distribution
+                  {t('home.industries.warehouse.eyebrow')}
                 </span>
               </div>
               <h2
@@ -465,18 +464,17 @@ function Industries() {
                 }}
                 data-testid="text-industry-warehouse"
               >
-                Total
+                {t('home.industries.warehouse.headline1')}
                 <br />
-                stock
+                {t('home.industries.warehouse.headline2')}
                 <br />
-                <span style={{ color: '#F59E0B' }}>control.</span>
+                <span style={{ color: '#F59E0B' }}>{t('home.industries.warehouse.headline3')}</span>
               </h2>
               <p
                 className="text-lg leading-relaxed mb-10"
                 style={{ color: '#78716C' }}
               >
-                Goods receipt, pick-and-pack, and dispatch — all tracked. Barcode
-                and RFID scanning supported.
+                {t('home.industries.warehouse.desc')}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
@@ -510,6 +508,7 @@ function Industries() {
 // ─── Demo Section ─────────────────────────────────────────────────────────────
 
 function DemoSection() {
+  const { t } = useTranslation();
   return (
     <section style={{ backgroundColor: '#1C1917' }} className="py-32">
       <div className="max-w-5xl mx-auto px-6 text-center">
@@ -517,7 +516,7 @@ function DemoSection() {
           className="text-xs font-bold tracking-widest uppercase mb-4"
           style={{ color: '#F59E0B' }}
         >
-          Product demo
+          {t('home.demo.eyebrow')}
         </p>
         <h2
           className="font-black mb-16"
@@ -528,7 +527,7 @@ function DemoSection() {
             lineHeight: 1.1,
           }}
         >
-          See Leo in action.
+          {t('home.demo.headline')}
         </h2>
 
         {/* 16:9 Video Placeholder */}
@@ -561,7 +560,7 @@ function DemoSection() {
               height: 88,
               backgroundColor: '#F59E0B',
             }}
-            aria-label="Play demo video"
+            aria-label={t('home.demo.play')}
             data-testid="button-play-demo"
           >
             <svg
@@ -580,7 +579,7 @@ function DemoSection() {
             className="absolute bottom-8 left-0 right-0 text-center text-sm font-semibold tracking-wide"
             style={{ color: '#78716C' }}
           >
-            3 minute product walkthrough
+            {t('home.demo.subtitle')}
           </span>
         </div>
       </div>
@@ -591,51 +590,52 @@ function DemoSection() {
 // ─── Pricing Preview ──────────────────────────────────────────────────────────
 
 function PricingPreview() {
+  const { t } = useTranslation();
   const plans = [
     {
-      name: 'Starter',
+      name: t('pricingPage.tiers.starterName'),
       price: '29',
-      desc: 'For single-location businesses getting started with POS.',
+      desc: t('home.pricing.starterDesc'),
       features: [
-        'Up to 3 registers',
-        'Inventory tracking',
-        'Card and cash payments',
-        'Daily sales reports',
-        'Email support',
+        t('home.pricing.starterF1'),
+        t('home.pricing.starterF2'),
+        t('home.pricing.starterF3'),
+        t('home.pricing.starterF4'),
+        t('home.pricing.starterF5'),
       ],
-      cta: 'Start free trial',
+      cta: t('common.startFreeTrial'),
       highlighted: false,
       badge: null,
     },
     {
-      name: 'Pro',
+      name: t('pricingPage.tiers.proName'),
       price: '79',
-      desc: 'For growing businesses that need more power and locations.',
+      desc: t('home.pricing.proDesc'),
       features: [
-        'Unlimited terminals',
-        'Multi-location (up to 5 sites)',
-        'Real-time analytics dashboard',
-        'Employee time and access control',
-        'Priority phone and chat support',
-        'API access',
+        t('home.pricing.proF1'),
+        t('home.pricing.proF2'),
+        t('home.pricing.proF3'),
+        t('home.pricing.proF4'),
+        t('home.pricing.proF5'),
+        t('home.pricing.proF6'),
       ],
-      cta: 'Start free trial',
+      cta: t('common.startFreeTrial'),
       highlighted: true,
-      badge: 'Most popular',
+      badge: t('home.pricing.mostPopular'),
     },
     {
-      name: 'Enterprise',
+      name: t('pricingPage.tiers.enterpriseName'),
       price: 'Custom',
-      desc: 'For large operations with specific integration and SLA needs.',
+      desc: t('home.pricing.enterpriseDesc'),
       features: [
-        'Everything in Pro',
-        'Custom integrations',
-        'Dedicated account manager',
-        'SLA and uptime guarantees',
-        'On-site onboarding',
-        'Custom reporting',
+        t('home.pricing.entF1'),
+        t('home.pricing.entF2'),
+        t('home.pricing.entF3'),
+        t('home.pricing.entF4'),
+        t('home.pricing.entF5'),
+        t('home.pricing.entF6'),
       ],
-      cta: 'Talk to sales',
+      cta: t('pricingPage.tiers.enterpriseCta'),
       highlighted: false,
       badge: null,
     },
@@ -652,7 +652,7 @@ function PricingPreview() {
             className="text-xs font-bold tracking-widest uppercase mb-4"
             style={{ color: '#F59E0B' }}
           >
-            Pricing
+            {t('home.pricing.eyebrow')}
           </p>
           <h2
             className="font-black"
@@ -662,10 +662,10 @@ function PricingPreview() {
               letterSpacing: '-0.04em',
             }}
           >
-            Simple pricing.
+            {t('home.pricing.headline')}
           </h2>
           <p className="text-lg mt-4" style={{ color: '#78716C' }}>
-            No hidden fees. Cancel anytime.
+            {t('home.pricing.sub')}
           </p>
         </div>
 
@@ -708,6 +708,7 @@ function PricingPreview() {
                     <>
                       <span
                         className="font-black leading-none"
+                        data-testid={`text-price-${plan.name}`}
                         style={{
                           fontSize: 'clamp(48px, 6vw, 72px)',
                           color: '#F5F5F4',
@@ -720,7 +721,7 @@ function PricingPreview() {
                         className="text-sm font-medium mb-2"
                         style={{ color: '#78716C' }}
                       >
-                        /mo
+                        {t('home.pricing.perMonth')}
                       </span>
                     </>
                   ) : (
@@ -732,7 +733,7 @@ function PricingPreview() {
                         letterSpacing: '-0.04em',
                       }}
                     >
-                      Custom
+                      {t('home.pricing.custom')}
                     </span>
                   )}
                 </div>
@@ -782,7 +783,7 @@ function PricingPreview() {
             style={{ color: '#F59E0B' }}
             data-testid="link-see-all-pricing"
           >
-            See full pricing details
+            {t('home.pricing.seeAll')}
             <ChevronRight size={16} />
           </Link>
         </div>
@@ -794,6 +795,7 @@ function PricingPreview() {
 // ─── CTA Section ──────────────────────────────────────────────────────────────
 
 function CTASection() {
+  const { t } = useTranslation();
   return (
     <section className="py-40 text-center" style={{ backgroundColor: '#0C0A09' }}>
       <div className="max-w-4xl mx-auto px-6">
@@ -806,13 +808,13 @@ function CTASection() {
           }}
           data-testid="text-cta-headline"
         >
-          Ready?
+          {t('home.cta.headline')}
         </h2>
         <p
           className="text-xl md:text-2xl font-medium mb-12 max-w-lg mx-auto leading-relaxed"
           style={{ color: '#78716C' }}
         >
-          Start your free 14-day trial. No credit card required. Cancel anytime.
+          {t('home.cta.sub')}
         </p>
         <Link
           href="/pricing"
@@ -820,7 +822,7 @@ function CTASection() {
           style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
           data-testid="button-cta-final"
         >
-          Start for free
+          {t('home.cta.button')}
           <ArrowRight size={24} />
         </Link>
       </div>

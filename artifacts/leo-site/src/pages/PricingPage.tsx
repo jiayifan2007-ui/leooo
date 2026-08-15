@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'wouter';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import {
   ArrowRight,
   Check,
@@ -28,88 +30,56 @@ function useReveal(threshold = 0.15) {
   return { ref, visible };
 }
 
-const tiers = [
-  {
-    name: 'Starter',
-    price: '€29',
-    period: '/mo',
-    desc: 'Everything a single-location business needs to go live today.',
-    features: [
-      'Up to 3 registers',
-      'Inventory tracking (500 SKUs)',
-      'Card and cash payments',
-      'Daily revenue reports',
-      'Email support',
-    ],
-    cta: 'Start free trial',
-    highlight: false,
-    badge: null as string | null,
-  },
-  {
-    name: 'Pro',
-    price: '€79',
-    period: '/mo',
-    desc: 'The full platform for growing businesses that move fast.',
-    features: [
-      'Unlimited registers',
-      'Unlimited inventory SKUs',
-      'Multi-location (up to 5 sites)',
-      'Employee time and access control',
-      'Live analytics dashboard',
-      'Priority support and onboarding call',
-      'API access',
-    ],
-    cta: 'Start free trial',
-    highlight: true,
-    badge: 'Most popular' as string | null,
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    desc: 'Dedicated infrastructure and SLA for large-scale operations.',
-    features: [
-      'Unlimited locations',
-      'Custom integrations and API access',
-      'Dedicated account manager',
-      'SLA 99.99% uptime guarantee',
-      'On-site training and rollout',
-      'Custom reporting',
-    ],
-    cta: 'Talk to sales',
-    highlight: false,
-    badge: null as string | null,
-  },
-];
+function buildTiers(t: TFunction) {
+  const tiersArr = [
+    {
+      name: t('pricingPage.tiers.starterName'),
+      price: '€29',
+      isCustom: false,
+      period: t('pricingPage.tiers.perMonth'),
+      desc: t('pricingPage.tiers.starterDesc'),
+      features: t('pricingPage.tiers.starterFeatures', { returnObjects: true }) as unknown as string[],
+      cta: t('pricingPage.tiers.starterCta'),
+      highlight: false,
+      badge: null as string | null,
+    },
+    {
+      name: t('pricingPage.tiers.proName'),
+      price: '€79',
+      isCustom: false,
+      period: t('pricingPage.tiers.perMonth'),
+      desc: t('pricingPage.tiers.proDesc'),
+      features: t('pricingPage.tiers.proFeatures', { returnObjects: true }) as unknown as string[],
+      cta: t('pricingPage.tiers.proCta'),
+      highlight: true,
+      badge: t('pricingPage.tiers.mostPopular') as string | null,
+    },
+    {
+      name: t('pricingPage.tiers.enterpriseName'),
+      price: t('pricingPage.tiers.custom'),
+      isCustom: true,
+      period: '',
+      desc: t('pricingPage.tiers.enterpriseDesc'),
+      features: t('pricingPage.tiers.enterpriseFeatures', { returnObjects: true }) as unknown as string[],
+      cta: t('pricingPage.tiers.enterpriseCta'),
+      highlight: false,
+      badge: null as string | null,
+    },
+  ];
+  return tiersArr;
+}
 
-const faqs = [
-  {
-    q: 'Is there a free trial?',
-    a: 'Yes — every plan starts with a 14-day free trial. No credit card required. You can cancel at any time before the trial ends.',
-  },
-  {
-    q: 'Can I switch plans later?',
-    a: 'Absolutely. Upgrade or downgrade at any time from your account settings. Changes take effect immediately.',
-  },
-  {
-    q: 'What payment methods do you accept?',
-    a: 'We accept all major credit and debit cards, as well as bank transfers for annual plans. All payments are processed securely.',
-  },
-  {
-    q: 'Does Leo support multiple currencies?',
-    a: 'Yes. Leo handles EUR, GBP, USD, and most major currencies. Currency is set per location.',
-  },
-  {
-    q: 'What hardware does Leo work with?',
-    a: 'Leo works with any modern tablet, POS terminal, receipt printer, and barcode scanner. We also sell certified hardware bundles.',
-  },
-  {
-    q: 'Is my data secure?',
-    a: 'All data is encrypted in transit and at rest. We are GDPR compliant and host on EU infrastructure. SOC 2 Type II certification is in progress.',
-  },
-];
+function buildFaqs(t: TFunction) {
+  return t('pricingPage.faq.items', { returnObjects: true }) as unknown as {
+    q: string;
+    a: string;
+  }[];
+}
 
 export default function PricingPage() {
+  const { t } = useTranslation();
+  const tiers = buildTiers(t);
+  const faqs = buildFaqs(t);
   const { ref: headerRef, visible: headerVisible } = useReveal(0.1);
   const { ref: tiersRef, visible: tiersVisible } = useReveal(0.1);
   const { ref: faqRef, visible: faqVisible } = useReveal(0.1);
@@ -143,7 +113,7 @@ export default function PricingPage() {
             }}
           >
             <Star size={10} fill="#FCD34D" color="#FCD34D" />
-            Transparent pricing
+            {t('pricingPage.hero.badge')}
           </div>
           <h1
             className="font-black leading-none mb-6 transition-all duration-700 delay-100"
@@ -156,9 +126,9 @@ export default function PricingPage() {
             }}
             data-testid="text-pricing-headline"
           >
-            Pay for what you use.
+            {t('pricingPage.hero.headline1')}
             <br />
-            <span style={{ color: '#F59E0B' }}>Nothing more.</span>
+            <span style={{ color: '#F59E0B' }}>{t('pricingPage.hero.headline2')}</span>
           </h1>
           <p
             className="text-xl font-medium max-w-xl mx-auto leading-relaxed transition-all duration-700 delay-200"
@@ -168,7 +138,7 @@ export default function PricingPage() {
               transform: headerVisible ? 'translateY(0)' : 'translateY(24px)',
             }}
           >
-            All plans include a 14-day free trial. No credit card required. Cancel anytime.
+            {t('pricingPage.hero.sub')}
           </p>
         </div>
       </section>
@@ -177,7 +147,7 @@ export default function PricingPage() {
       <section className="py-16 px-6" style={{ borderTop: '1px solid #44403C' }}>
         <div ref={tiersRef} className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {tiers.map(({ name, price, period, desc, features, cta, highlight, badge }, i) => (
+            {tiers.map(({ name, price, isCustom, period, desc, features, cta, highlight, badge }, i) => (
               <div
                 key={name}
                 className="rounded-xl p-8 flex flex-col transition-all duration-700"
@@ -210,8 +180,8 @@ export default function PricingPage() {
                     <span
                       className="font-black"
                       style={{
-                        fontSize: price === 'Custom' ? 'clamp(32px, 4vw, 48px)' : 'clamp(40px, 5vw, 64px)',
-                        color: price === 'Custom' ? '#F59E0B' : '#F5F5F4',
+                        fontSize: isCustom ? 'clamp(32px, 4vw, 48px)' : 'clamp(40px, 5vw, 64px)',
+                        color: isCustom ? '#F59E0B' : '#F5F5F4',
                         letterSpacing: '-0.04em',
                         lineHeight: 1,
                       }}
@@ -288,19 +258,10 @@ export default function PricingPage() {
       <section className="py-20 px-6" style={{ borderTop: '1px solid #292524' }}>
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: '#F59E0B' }}>
-            All plans include
+            {t('pricingPage.includes.eyebrow')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              'Free 14-day trial',
-              'No credit card required',
-              'Cancel anytime',
-              'Unlimited transactions',
-              'Automatic updates',
-              'SSL and data encryption',
-              'GDPR compliant hosting',
-              'Onboarding guides',
-            ].map((item) => (
+            {(t('pricingPage.includes.items', { returnObjects: true }) as string[]).map((item) => (
               <div
                 key={item}
                 className="flex items-center gap-3 p-4 rounded-lg"
@@ -334,13 +295,13 @@ export default function PricingPage() {
               className="text-xs font-bold tracking-widest uppercase mb-3"
               style={{ color: '#F59E0B' }}
             >
-              Questions
+              {t('pricingPage.faq.eyebrow')}
             </p>
             <h2
               className="font-black"
               style={{ fontSize: 'clamp(28px, 4vw, 48px)', color: '#F5F5F4', letterSpacing: '-0.03em' }}
             >
-              Everything you need to know.
+              {t('pricingPage.faq.headline')}
             </h2>
           </div>
 
@@ -400,7 +361,7 @@ export default function PricingPage() {
             className="text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ color: '#92400E' }}
           >
-            Ready to run a tighter operation?
+            {t('pricingPage.cta.eyebrow')}
           </p>
           <h2
             className="font-black leading-tight mb-4"
@@ -411,16 +372,15 @@ export default function PricingPage() {
             }}
             data-testid="text-pricing-cta-headline"
           >
-            Your next shift starts
+            {t('pricingPage.cta.headline1')}
             <br />
-            with better software.
+            {t('pricingPage.cta.headline2')}
           </h2>
           <p
             className="text-base font-medium max-w-xl mx-auto mb-10"
             style={{ color: '#92400E' }}
           >
-            Join 4,200+ businesses that replaced fragmented tools with one
-            platform that actually keeps up with them.
+            {t('pricingPage.cta.desc')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -430,7 +390,7 @@ export default function PricingPage() {
               style={{ backgroundColor: '#0C0A09', color: '#F5F5F4' }}
               data-testid="button-pricing-cta-trial"
             >
-              Start free trial — 14 days
+              {t('pricingPage.cta.button')}
               <ArrowRight size={16} />
             </a>
             <Link
@@ -443,7 +403,7 @@ export default function PricingPage() {
               }}
               data-testid="link-pricing-see-product"
             >
-              See the product
+              {t('pricingPage.cta.seeProduct')}
               <ChevronRight size={16} />
             </Link>
           </div>

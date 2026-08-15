@@ -1,12 +1,15 @@
 import { type ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
+import { useTranslation } from 'react-i18next';
 import { Menu, X, Zap, ArrowRight } from 'lucide-react';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 interface SiteLayoutProps {
   children: ReactNode;
 }
 
 export default function SiteLayout({ children }: SiteLayoutProps) {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [location] = useLocation();
@@ -22,8 +25,8 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
   }, [location]);
 
   const navLinks = [
-    { label: 'Product', href: '/product' },
-    { label: 'Pricing', href: '/pricing' },
+    { label: t('nav.product'), href: '/product' },
+    { label: t('nav.pricing'), href: '/pricing' },
   ];
 
   return (
@@ -72,13 +75,14 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             <a
               href="#"
               className="text-sm font-medium transition-colors"
               style={{ color: '#78716C' }}
               data-testid="link-sign-in"
             >
-              Sign in
+              {t('nav.signIn')}
             </a>
             <Link
               href="/pricing"
@@ -86,7 +90,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
               data-testid="link-cta-nav"
             >
-              Start free trial
+              {t('nav.startTrial')}
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -97,7 +101,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
             className="md:hidden p-2 rounded-lg transition-colors"
             style={{ color: '#A8A29E' }}
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
             data-testid="button-mobile-menu"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -127,9 +131,12 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
               data-testid="link-mobile-cta"
             >
-              Start free trial
+              {t('nav.startTrial')}
               <ArrowRight size={14} />
             </Link>
+            <div className="flex justify-end">
+              <LanguageSwitcher />
+            </div>
           </div>
         )}
       </nav>
@@ -161,46 +168,46 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
                 </span>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: '#78716C' }}>
-                Point-of-sale built for the real world — restaurants, shops, and warehouses that demand more.
+                {t('footer.tagline')}
               </p>
             </div>
 
             {/* Link columns */}
             {[
               {
-                heading: 'Product',
+                heading: t('footer.productHeading'),
                 links: [
-                  { label: 'Features', href: '/product' },
-                  { label: 'Pricing', href: '/pricing' },
-                  { label: 'Changelog', href: '#' },
-                  { label: 'Roadmap', href: '#' },
+                  { label: t('footer.features'), href: '/product' },
+                  { label: t('footer.pricing'), href: '/pricing' },
+                  { label: t('footer.changelog'), href: '#' },
+                  { label: t('footer.roadmap'), href: '#' },
                 ],
               },
               {
-                heading: 'Industries',
+                heading: t('footer.industriesHeading'),
                 links: [
-                  { label: 'Restaurants', href: '#' },
-                  { label: 'Retail', href: '#' },
-                  { label: 'Warehouses', href: '#' },
-                  { label: 'Cafes', href: '#' },
+                  { label: t('footer.restaurants'), href: '#' },
+                  { label: t('footer.retail'), href: '#' },
+                  { label: t('footer.warehouses'), href: '#' },
+                  { label: t('footer.cafes'), href: '#' },
                 ],
               },
               {
-                heading: 'Company',
+                heading: t('footer.companyHeading'),
                 links: [
-                  { label: 'About', href: '#' },
-                  { label: 'Blog', href: '#' },
-                  { label: 'Careers', href: '#' },
-                  { label: 'Press', href: '#' },
+                  { label: t('footer.about'), href: '#' },
+                  { label: t('footer.blog'), href: '#' },
+                  { label: t('footer.careers'), href: '#' },
+                  { label: t('footer.press'), href: '#' },
                 ],
               },
               {
-                heading: 'Legal',
+                heading: t('footer.legalHeading'),
                 links: [
-                  { label: 'Privacy Policy', href: '#' },
-                  { label: 'Terms of Service', href: '#' },
-                  { label: 'Security', href: '#' },
-                  { label: 'GDPR', href: '#' },
+                  { label: t('footer.privacyPolicy'), href: '#' },
+                  { label: t('footer.termsOfService'), href: '#' },
+                  { label: t('footer.security'), href: '#' },
+                  { label: t('footer.gdpr'), href: '#' },
                 ],
               },
             ].map((col) => (
@@ -234,18 +241,22 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
             style={{ borderColor: '#1C1917' }}
           >
             <p className="text-xs" style={{ color: '#44403C' }}>
-              &copy; {new Date().getFullYear()} Leo Software. All rights reserved.
+              &copy; {new Date().getFullYear()} {t('footer.rights')}
             </p>
             <div className="flex items-center gap-6">
-              {['Privacy', 'Terms', 'Cookies'].map((item) => (
+              {[
+                { key: t('footer.privacy'), id: 'privacy' },
+                { key: t('footer.terms'), id: 'terms' },
+                { key: t('footer.cookies'), id: 'cookies' },
+              ].map((item) => (
                 <a
-                  key={item}
+                  key={item.id}
                   href="#"
                   className="text-xs hover:opacity-80 transition-opacity"
                   style={{ color: '#44403C' }}
-                  data-testid={`link-legal-${item.toLowerCase()}`}
+                  data-testid={`link-legal-${item.id}`}
                 >
-                  {item}
+                  {item.key}
                 </a>
               ))}
             </div>

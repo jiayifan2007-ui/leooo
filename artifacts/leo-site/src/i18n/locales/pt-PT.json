@@ -1,0 +1,331 @@
+{
+  "nav": {
+    "product": "Produto",
+    "pricing": "Preços",
+    "signIn": "Iniciar sessão",
+    "startTrial": "Começar teste gratuito",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "footer": {
+    "tagline": "Ponto de venda concebido para o mundo real — restaurantes, lojas e armazéns que exigem mais.",
+    "productHeading": "Produto",
+    "industriesHeading": "Indústrias",
+    "companyHeading": "Empresa",
+    "legalHeading": "Legal",
+    "features": "Funcionalidades",
+    "pricing": "Preços",
+    "changelog": "Registo de alterações",
+    "roadmap": "Roteiro",
+    "restaurants": "Restaurantes",
+    "retail": "Retalho",
+    "warehouses": "Armazéns",
+    "cafes": "Cafés",
+    "about": "Sobre nós",
+    "blog": "Blogue",
+    "careers": "Carreiras",
+    "press": "Imprensa",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "security": "Segurança",
+    "gdpr": "RGPD",
+    "rights": "Leo Software. Todos os direitos reservados.",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "cookies": "Cookies"
+  },
+  "home": {
+    "hero": {
+      "badge": "Ponto de Venda, Reinventado",
+      "headline1": "Comande",
+      "headline2": "o seu",
+      "headline3": "Negócio.",
+      "sub": "Um único sistema para restaurantes, retalho e armazéns. Inventário em tempo real, pagamentos e análises — tudo num só lugar.",
+      "cta": "Começar grátis",
+      "demo": "Ver demonstração",
+      "scroll": "Deslize para explorar"
+    },
+    "stats": {
+      "biz": "Empresas no mundo",
+      "uptime": "Garantia de disponibilidade",
+      "processed": "Processado diariamente",
+      "setup": "Tempo médio de configuração"
+    },
+    "features": {
+      "eyebrow": "Concebido para o mundo real",
+      "headline1": "Cada funcionalidade",
+      "headline2": "de que",
+      "headline3": "precisa.",
+      "f1title": "Controlo de inventário em tempo real",
+      "f1desc": "Os níveis de stock atualizam-se no momento em que uma venda é feita. Obtenha alertas de stock baixo, reposições automáticas e trilhos de auditoria completos em todas as localizações.",
+      "f2title": "Pagamentos unificados",
+      "f2desc": "Cartão, numerário, telemóvel e pagamento posterior — tudo através de uma única integração. A reconciliação acontece automaticamente no fim do dia.",
+      "f3title": "Gestão multi-localização",
+      "f3desc": "Um painel para gerir tudo. Transfira stock entre balcões, compare o desempenho e gere permissões de equipa loja a loja.",
+      "f4title": "Painel de análises em tempo real",
+      "f4desc": "Receitas, margens, afluência e tamanho de carrinho — atualizados em tempo real. Exporte para CSV ou ligue a sua ferramenta de BI através da nossa API aberta."
+    },
+    "industries": {
+      "restaurant": {
+        "eyebrow": "Restaurantes e Cafés",
+        "headline1": "Da sala",
+        "headline2": "para a",
+        "headline3": "cozinha.",
+        "desc": "Gestão de mesas, contas divididas, integração com ecrãs de cozinha e pedidos por prato — concebido para a forma como os restaurantes realmente funcionam.",
+        "items": [
+          { "label": "Gestão de mesas e pedidos", "desc": "Planta visual, coberturas e estado em tempo real." },
+          { "label": "Contas divididas e aberturas", "desc": "Por lugar, por item ou divisão personalizada — resolvida em segundos." },
+          { "label": "Ecrã de cozinha", "desc": "Os pedidos vão diretos para as áreas de preparação, sem talões em papel." },
+          { "label": "Escalação de equipa", "desc": "Gestão de turnos e partilha de gorjetas incluídas." }
+        ]
+      },
+      "retail": {
+        "eyebrow": "Retalho e Lojas",
+        "headline1": "Venda mais,",
+        "headline2": "stock",
+        "headline3": "mais inteligente.",
+        "desc": "Do boutique ao retalho multi-loja. O fluxo de checkout do Leo é sem atritos e o motor de inventário nunca o deixa vender em excesso.",
+        "items": [
+          { "label": "Carrinho e checkout", "desc": "Leitura de código de barras, registo manual ou QR — todos os fluxos cobertos." },
+          { "label": "Inventário inteligente", "desc": "Regras de reposição automática e integrações com fornecedores." },
+          { "label": "Stock multi-localização", "desc": "Transfira stock entre lojas com dois toques." },
+          { "label": "Fidelização e descontos", "desc": "Pontos, vales e escalões de membros prontos a usar." }
+        ]
+      },
+      "warehouse": {
+        "eyebrow": "Armazéns e Distribuição",
+        "headline1": "Controlo",
+        "headline2": "total do",
+        "headline3": "stock.",
+        "desc": "Receção de mercadorias, separação e expedição — tudo monitorizado. Leitura de código de barras e RFID suportada.",
+        "items": [
+          { "label": "Receção e colocação de mercadorias", "desc": "Correspondência de encomendas, alocação por zona e registo por lote." },
+          { "label": "Movimentos de stock em tempo real", "desc": "Cada recolha, transferência e ajuste registado de imediato." },
+          { "label": "Leitura de código de barras e RFID", "desc": "Funciona com leitores existentes e dispositivos móveis." },
+          { "label": "Controlo de acesso por função", "desc": "Supervisores, operadores e gestores — permissões detalhadas." }
+        ]
+      }
+    },
+    "demo": {
+      "eyebrow": "Demonstração do produto",
+      "headline": "Veja o Leo em ação.",
+      "play": "Reproduzir vídeo de demonstração",
+      "subtitle": "Apresentação do produto de 3 minutos"
+    },
+    "pricing": {
+      "eyebrow": "Preços",
+      "headline": "Preços simples.",
+      "sub": "Sem custos ocultos. Cancele quando quiser.",
+      "starterDesc": "Para empresas de uma localização que estão a começar com POS.",
+      "proDesc": "Para empresas em crescimento que precisam de mais potência e localizações.",
+      "enterpriseDesc": "Para grandes operações com necessidades específicas de integração e SLA.",
+      "mostPopular": "Mais popular",
+      "custom": "Personalizado",
+      "perMonth": "/mês",
+      "seeAll": "Ver todos os detalhes de preços",
+      "starterF1": "Até 3 terminais",
+      "starterF2": "Controlo de inventário",
+      "starterF3": "Pagamentos por cartão e numerário",
+      "starterF4": "Relatórios diários de vendas",
+      "starterF5": "Suporte por e-mail",
+      "proF1": "Terminais ilimitados",
+      "proF2": "Multi-localização (até 5 espaços)",
+      "proF3": "Painel de análises em tempo real",
+      "proF4": "Controlo de tempo e acesso de colaboradores",
+      "proF5": "Suporte prioritário por telefone e chat",
+      "proF6": "Acesso à API",
+      "entF1": "Tudo o que está no Profissional",
+      "entF2": "Integrações personalizadas",
+      "entF3": "Gestor de conta dedicado",
+      "entF4": "SLA e garantias de disponibilidade",
+      "entF5": "Onboarding no local",
+      "entF6": "Relatórios personalizados"
+    },
+    "cta": {
+      "headline": "Pronto?",
+      "sub": "Comece o seu teste gratuito de 14 dias. Sem cartão de crédito. Cancele quando quiser.",
+      "button": "Começar grátis"
+    }
+  },
+  "pos": {
+    "leo": "Leo POS",
+    "table4": "Mesa 4",
+    "items": [
+      { "name": "Salmão Grelhado", "qty": 2, "price": "€38.00" },
+      { "name": "Salada César", "qty": 1, "price": "€12.50" },
+      { "name": "Água com Gás", "qty": 3, "price": "€9.00" },
+      { "name": "Tiramisu", "qty": 2, "price": "€16.00" },
+      { "name": "Vinho Tinto da Casa", "qty": 1, "price": "€22.00" }
+    ],
+    "total": "Total",
+    "split": "Dividir Conta",
+    "charge": "Cobrar",
+    "methods": ["Cartão", "Numerário", "MB"]
+  },
+  "product": {
+    "hero": {
+      "badge": "Um sistema. Qualquer negócio.",
+      "headline1": "A clareza",
+      "headline2": "impulsiona o negócio.",
+      "desc": "O Leo Software reúne pedidos, inventário, pagamentos e equipa num único sistema — para se focar no que importa, não nas ferramentas.",
+      "trial": "Começar grátis",
+      "seeHow": "Ver como funciona",
+      "points": ["Sem cartão de crédito", "Configuração em menos de 5 minutos", "Cancele quando quiser"]
+    },
+    "socialProof": "Mais de 4.200 empresas confiam no Leo Software",
+    "socialCategories": {
+      "restaurants": "Restaurantes",
+      "retailShops": "Lojas de Retalho",
+      "warehouses": "Armazéns",
+      "foodTrucks": "Food Trucks"
+    },
+    "features": {
+      "eyebrow": "O que o Leo faz",
+      "headline": "Tudo num só lugar. Nada no caminho.",
+      "f1title": "Análises em tempo real, sempre ligadas.",
+      "f1desc": "O seu painel atualiza-se em tempo real — vendas por hora, melhores itens, desempenho da equipa e receitas diárias. Sem relatório de fim de dia. O panorama está sempre atualizado.",
+      "f1link": "Explorar o painel",
+      "f2title": "Pagamentos sem atritos.",
+      "f2desc": "Aceite pagamentos por cartão, numerário e telemóvel num só fluxo. Divida contas, processe devoluções e concilie automaticamente. O Leo trata da transação para que a sua equipa trate do cliente.",
+      "f2link": "Ver funcionalidades de pagamento",
+      "f3title": "Várias localizações, uma visão.",
+      "f3desc": "Gestione dois ou vinte espaços, o Leo dá-lhe um único painel de controlo. Compare o desempenho entre espaços, publique atualizações de ementa em todos de uma vez e defina regras por localização.",
+      "f3link": "Saber mais sobre multi-localização"
+    },
+    "industries": {
+      "eyebrow": "Concebido para a sua indústria",
+      "headline": "Uma plataforma. Todas as operações.",
+      "restaurant": "Restaurante",
+      "shop": "Loja",
+      "warehouse": "Armazém",
+      "restHeadline": "Concebido para cozinhas que nunca param.",
+      "restNote": "Usado por restaurantes, cafés e operações de bar e grelhados.",
+      "restFeatures": [
+        "Gestão de mesas e plantação do salão",
+        "Encaminhamento de pedidos por prato para o ecrã de cozinha",
+        "Contas divididas e modificadores personalizados",
+        "Registo de turnos de equipa e relatórios de gorjetas",
+        "Atualizações de alergénios e ementa em tempo real"
+      ],
+      "shopHeadline": "Pronto para o retalho desde o primeiro dia.",
+      "shopNote": "Ideal para boutiques, lojas de conveniência e retalhistas especializados.",
+      "shopFeatures": [
+        "Leitura de código de barras e checkout rápido",
+        "Alertas de reposição de stock e sincronização com fornecedores",
+        "Programas de fidelização e descontos",
+        "Gestão de produtos multi-variante (tamanho, cor)",
+        "Conciliação de vendas no fim do dia"
+      ],
+      "warehouseHeadline": "Stock sob controlo, sempre.",
+      "warehouseNote": "Concebido para centros de distribuição, distribuidores alimentares e armazenistas.",
+      "warehouseFeatures": [
+        "Receção de mercadorias e leitura por lote",
+        "Localização por contentor e prateleira",
+        "Alertas de stock baixo e de validade",
+        "Gestão de encomendas de compra",
+        "Trilho de auditoria completo para cada movimento"
+      ]
+    },
+    "testimonial": {
+      "quote": "Antes do Leo, geríamos a nossa cozinha, inventário e pagamentos em três ferramentas diferentes. Agora é um único ecrã. O tempo de fecho passou de quarenta minutos para menos de dez.",
+      "name": "Maria Haugen",
+      "role": "Proprietária, Brygga Kitchen — Oslo, Noruega"
+    },
+    "cta": {
+      "eyebrow": "Comece hoje",
+      "headline1": "Menos complexidade.",
+      "headline2": "Mais negócio.",
+      "desc": "Junte-se a mais de 4.200 empresas que trocaram folhas de cálculo e ferramentas separadas por um sistema focado. Grátis durante 14 dias.",
+      "button": "Começar o seu teste gratuito",
+      "docs": "Ler a documentação",
+      "fineprint": "Sem cartão de crédito. Cancele quando quiser. Conformidade RGPD."
+    }
+  },
+  "pricingPage": {
+    "hero": {
+      "badge": "Preços transparentes",
+      "headline1": "Pague pelo que usa.",
+      "headline2": "Nada mais.",
+      "sub": "Todos os planos incluem teste gratuito de 14 dias. Sem cartão de crédito. Cancele quando quiser."
+    },
+    "tiers": {
+      "starterName": "Inicial",
+      "proName": "Profissional",
+      "enterpriseName": "Empresa",
+      "perMonth": "/mês",
+      "custom": "Personalizado",
+      "starterDesc": "Tudo o que uma empresa de uma localização precisa para avançar hoje.",
+      "proDesc": "A plataforma completa para empresas em crescimento que se movem depressa.",
+      "enterpriseDesc": "Infraestrutura dedicada e SLA para operações de grande escala.",
+      "mostPopular": "Mais popular",
+      "starterCta": "Começar teste gratuito",
+      "proCta": "Começar teste gratuito",
+      "enterpriseCta": "Falar com vendas",
+      "starterFeatures": [
+        "Até 3 terminais",
+        "Controlo de inventário (500 SKU)",
+        "Pagamentos por cartão e numerário",
+        "Relatórios diários de receitas",
+        "Suporte por e-mail"
+      ],
+      "proFeatures": [
+        "Terminais ilimitados",
+        "SKU de inventário ilimitados",
+        "Multi-localização (até 5 espaços)",
+        "Controlo de tempo e acesso de colaboradores",
+        "Painel de análises em tempo real",
+        "Suporte prioritário e chamada de onboarding",
+        "Acesso à API"
+      ],
+      "enterpriseFeatures": [
+        "Localizações ilimitadas",
+        "Integrações personalizadas e acesso à API",
+        "Gestor de conta dedicado",
+        "Garantia de disponibilidade SLA 99,99%",
+        "Formação e implementação no local",
+        "Relatórios personalizados"
+      ]
+    },
+    "includes": {
+      "eyebrow": "Todos os planos incluem",
+      "items": [
+        "Teste gratuito de 14 dias",
+        "Sem cartão de crédito",
+        "Cancele quando quiser",
+        "Transações ilimitadas",
+        "Atualizações automáticas",
+        "SSL e encriptação de dados",
+        "Alojamento em conformidade RGPD",
+        "Guias de onboarding"
+      ]
+    },
+    "faq": {
+      "eyebrow": "Perguntas",
+      "headline": "Tudo o que precisa de saber.",
+      "items": [
+        { "q": "Existe um teste gratuito?", "a": "Sim — todos os planos começam com um teste gratuito de 14 dias. Sem cartão de crédito. Pode cancelar a qualquer momento antes de o teste terminar." },
+        { "q": "Posso mudar de plano mais tarde?", "a": "Claro que sim. Atualize ou faça downgrade a qualquer momento a partir das definições da sua conta. As alterações entram em vigor de imediato." },
+        { "q": "Que métodos de pagamento aceitam?", "a": "Aceitamos todos os principais cartões de crédito e débito, bem como transferências bancárias para planos anuais. Todos os pagamentos são processados de forma segura." },
+        { "q": "O Leo suporta várias moedas?", "a": "Sim. O Leo trabalha com EUR, GBP, USD e a maioria das moedas principais. A moeda é definida por localização." },
+        { "q": "Com que hardware funciona o Leo?", "a": "O Leo funciona com qualquer tablet moderno, terminal POS, impressora de recibos e leitor de código de barras. Também vendemos pacotes de hardware certificado." },
+        { "q": "Os meus dados estão seguros?", "a": "Todos os dados são encriptados em trânsito e em repouso. Estamos em conformidade com o RGPD e alojamos em infraestrutura da UE. A certificação SOC 2 Tipo II está em curso." }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Pronto para uma operação mais eficiente?",
+      "headline1": "O seu próximo turno começa",
+      "headline2": "com melhor software.",
+      "desc": "Junte-se a mais de 4.200 empresas que trocaram ferramentas fragmentadas por uma plataforma que as acompanha.",
+      "button": "Começar teste gratuito — 14 dias",
+      "seeProduct": "Ver o produto"
+    }
+  },
+  "notFound": {
+    "title": "404 Página não encontrada",
+    "desc": "Esqueceu-se de adicionar a página ao router?"
+  },
+  "common": {
+    "startFreeTrial": "Começar teste gratuito",
+    "languageLabel": "Alterar idioma"
+  }
+}

@@ -1,4 +1,16 @@
+import { useTranslation } from 'react-i18next';
+
+interface PosItem {
+  name: string;
+  qty: number;
+  price: string;
+}
+
 export default function POSMockup() {
+  const { t } = useTranslation();
+  const items = t('pos.items', { returnObjects: true }) as PosItem[];
+  const methods = t('pos.methods', { returnObjects: true }) as string[];
+
   return (
     <div className="relative flex items-center justify-center w-full h-full min-h-[520px]">
       {/* outer glow */}
@@ -21,22 +33,16 @@ export default function POSMockup() {
             className="text-xs font-semibold tracking-widest uppercase"
             style={{ color: '#A8A29E' }}
           >
-            Leo POS
+            {t('pos.leo')}
           </span>
           <span className="text-xs font-medium" style={{ color: '#F59E0B' }}>
-            Table 4
+            {t('pos.table4')}
           </span>
         </div>
 
         {/* Order list */}
         <div className="px-5 pt-4 pb-2 space-y-2">
-          {[
-            { name: 'Grilled Salmon', qty: 2, price: '€38.00' },
-            { name: 'Caesar Salad', qty: 1, price: '€12.50' },
-            { name: 'Sparkling Water', qty: 3, price: '€9.00' },
-            { name: 'Tiramisu', qty: 2, price: '€16.00' },
-            { name: 'House Red Wine', qty: 1, price: '€22.00' },
-          ].map((item) => (
+          {items.map((item) => (
             <div
               key={item.name}
               className="flex items-center justify-between py-1.5 border-b"
@@ -69,7 +75,7 @@ export default function POSMockup() {
         {/* Total */}
         <div className="px-5 pb-4 flex items-center justify-between">
           <span className="text-base font-semibold" style={{ color: '#F5F5F4' }}>
-            Total
+            {t('pos.total')}
           </span>
           <span className="text-2xl font-bold" style={{ color: '#FCD34D' }}>
             €142.50
@@ -88,7 +94,7 @@ export default function POSMockup() {
             }}
             data-testid="button-split-bill"
           >
-            Split Bill
+            {t('pos.split')}
           </button>
           <button
             type="button"
@@ -96,13 +102,13 @@ export default function POSMockup() {
             style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
             data-testid="button-charge"
           >
-            Charge
+            {t('pos.charge')}
           </button>
         </div>
 
         {/* Payment methods */}
         <div className="px-5 pb-5 flex items-center gap-2">
-          {['Card', 'Cash', 'Mobile'].map((method) => (
+          {methods.map((method) => (
             <span
               key={method}
               className="flex-1 text-center text-xs py-1.5 rounded-md border"

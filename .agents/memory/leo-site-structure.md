@@ -21,3 +21,13 @@ the source of truth for any future page/Section edits — do not re-invent copy 
 frontend-only by user preference (no backend, forms, auth, DB). Domain target is leooo.pt (user owns
 it; publish then add custom domain in publishing settings). Consumes `@workspace/leo-software`
 design system; no local copies of package components.
+
+**i18n:** site is localized via react-i18next + i18next-browser-languagedetector. Supported langs are
+`en`, `pt` (European Portuguese, pt-PT), `zh` (Mainland Mandarin, zh-CN). Resources live in
+`src/i18n/locales/<code>.json`; init in `src/i18n/index.ts` (imported in main.tsx). Language chooser
+is `src/components/LanguageSwitcher.tsx` in the navbar. ALL user-facing strings must go through
+`t()` keys — never hardcode; when adding copy, add the key to all three JSON files (EN is source of
+truth). Selection persists to localStorage `leo-site-language`. **Why:** user requested
+Portuguese (Portugal) and Chinese (Mainland) languages; per-page array content (features/FAQ) is
+fetched with `returnObjects: true`, and data-driven plans avoid literal `'Custom'` string checks
+(use an `isCustom` flag instead so translated plan names don't break styling).

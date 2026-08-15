@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import { ErrorBoundary } from '@/components/error-boundary';
 
+// Initialize i18n (English, European Portuguese, Mainland Mandarin) before React mounts.
+import './i18n';
 import './index.css';
 
 createRoot(document.getElementById('root')!, {

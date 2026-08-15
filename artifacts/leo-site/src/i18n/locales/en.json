@@ -1,0 +1,331 @@
+{
+  "nav": {
+    "product": "Product",
+    "pricing": "Pricing",
+    "signIn": "Sign in",
+    "startTrial": "Start free trial",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "Point-of-sale built for the real world — restaurants, shops, and warehouses that demand more.",
+    "productHeading": "Product",
+    "industriesHeading": "Industries",
+    "companyHeading": "Company",
+    "legalHeading": "Legal",
+    "features": "Features",
+    "pricing": "Pricing",
+    "changelog": "Changelog",
+    "roadmap": "Roadmap",
+    "restaurants": "Restaurants",
+    "retail": "Retail",
+    "warehouses": "Warehouses",
+    "cafes": "Cafes",
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Careers",
+    "press": "Press",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "security": "Security",
+    "gdpr": "GDPR",
+    "rights": "Leo Software. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  },
+  "home": {
+    "hero": {
+      "badge": "Point of Sale, Reinvented",
+      "headline1": "Command",
+      "headline2": "Your",
+      "headline3": "Business.",
+      "sub": "One system for restaurants, retail, and warehouses. Real-time inventory, payments, and analytics — all in one place.",
+      "cta": "Get started free",
+      "demo": "Watch demo",
+      "scroll": "Scroll to explore"
+    },
+    "stats": {
+      "biz": "Businesses worldwide",
+      "uptime": "Uptime guarantee",
+      "processed": "Processed daily",
+      "setup": "Average setup time"
+    },
+    "features": {
+      "eyebrow": "Built for the real world",
+      "headline1": "Every feature",
+      "headline2": "you actually",
+      "headline3": "need.",
+      "f1title": "Real-time inventory tracking",
+      "f1desc": "Stock levels update the moment a sale is made. Get low-stock alerts, automatic reorder triggers, and full audit trails across every location.",
+      "f2title": "Unified payment processing",
+      "f2desc": "Card, cash, mobile, and buy-now-pay-later — all routed through a single integration. Reconciliation happens automatically at end of day.",
+      "f3title": "Multi-location management",
+      "f3desc": "One dashboard to rule them all. Transfer stock between branches, compare performance, and manage staff permissions site by site.",
+      "f4title": "Live analytics dashboard",
+      "f4desc": "Revenue, margins, footfall, and basket size — updated in real time. Export to CSV or connect your BI tool via our open API."
+    },
+    "industries": {
+      "restaurant": {
+        "eyebrow": "Restaurants and Cafes",
+        "headline1": "Floor to",
+        "headline2": "kitchen,",
+        "headline3": "in sync.",
+        "desc": "Table management, split bills, kitchen display integration, and course-by-course ordering — built for how restaurants actually work.",
+        "items": [
+          { "label": "Table and order management", "desc": "Visual floor plan, covers, and real-time status." },
+          { "label": "Split bills and tab handling", "desc": "By seat, by item, or custom split — settled in seconds." },
+          { "label": "Kitchen display system", "desc": "Orders fire directly to prep stations, no paper tickets." },
+          { "label": "Staff scheduling", "desc": "Shift management and tip pooling built in." }
+        ]
+      },
+      "retail": {
+        "eyebrow": "Retail and Shop",
+        "headline1": "Sell more,",
+        "headline2": "stock",
+        "headline3": "smarter.",
+        "desc": "From boutique to multi-chain retail. Leo's checkout flow is frictionless, and the inventory engine never lets you oversell.",
+        "items": [
+          { "label": "Cart and checkout", "desc": "Barcode scan, manual entry, or QR — every flow covered." },
+          { "label": "Smart inventory", "desc": "Auto-replenishment rules and supplier integrations." },
+          { "label": "Multi-location stock", "desc": "Transfer stock between stores with two taps." },
+          { "label": "Loyalty and discounts", "desc": "Points, vouchers, and membership tiers out of the box." }
+        ]
+      },
+      "warehouse": {
+        "eyebrow": "Warehouse and Distribution",
+        "headline1": "Total",
+        "headline2": "stock",
+        "headline3": "control.",
+        "desc": "Goods receipt, pick-and-pack, and dispatch — all tracked. Barcode and RFID scanning supported.",
+        "items": [
+          { "label": "Goods receipt and put-away", "desc": "PO matching, zone allocation, and batch tracking." },
+          { "label": "Real-time stock movements", "desc": "Every pick, transfer, and adjustment logged instantly." },
+          { "label": "Barcode and RFID scanning", "desc": "Works with existing scanners and mobile devices." },
+          { "label": "Access control by role", "desc": "Supervisors, pickers, and managers — granular permissions." }
+        ]
+      }
+    },
+    "demo": {
+      "eyebrow": "Product demo",
+      "headline": "See Leo in action.",
+      "play": "Play demo video",
+      "subtitle": "3 minute product walkthrough"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "headline": "Simple pricing.",
+      "sub": "No hidden fees. Cancel anytime.",
+      "starterDesc": "For single-location businesses getting started with POS.",
+      "proDesc": "For growing businesses that need more power and locations.",
+      "enterpriseDesc": "For large operations with specific integration and SLA needs.",
+      "mostPopular": "Most popular",
+      "custom": "Custom",
+      "perMonth": "/mo",
+      "seeAll": "See full pricing details",
+      "starterF1": "Up to 3 registers",
+      "starterF2": "Inventory tracking",
+      "starterF3": "Card and cash payments",
+      "starterF4": "Daily sales reports",
+      "starterF5": "Email support",
+      "proF1": "Unlimited terminals",
+      "proF2": "Multi-location (up to 5 sites)",
+      "proF3": "Real-time analytics dashboard",
+      "proF4": "Employee time and access control",
+      "proF5": "Priority phone and chat support",
+      "proF6": "API access",
+      "entF1": "Everything in Pro",
+      "entF2": "Custom integrations",
+      "entF3": "Dedicated account manager",
+      "entF4": "SLA and uptime guarantees",
+      "entF5": "On-site onboarding",
+      "entF6": "Custom reporting"
+    },
+    "cta": {
+      "headline": "Ready?",
+      "sub": "Start your free 14-day trial. No credit card required. Cancel anytime.",
+      "button": "Start for free"
+    }
+  },
+  "pos": {
+    "leo": "Leo POS",
+    "table4": "Table 4",
+    "items": [
+      { "name": "Grilled Salmon", "qty": 2, "price": "€38.00" },
+      { "name": "Caesar Salad", "qty": 1, "price": "€12.50" },
+      { "name": "Sparkling Water", "qty": 3, "price": "€9.00" },
+      { "name": "Tiramisu", "qty": 2, "price": "€16.00" },
+      { "name": "House Red Wine", "qty": 1, "price": "€22.00" }
+    ],
+    "total": "Total",
+    "split": "Split Bill",
+    "charge": "Charge",
+    "methods": ["Card", "Cash", "Mobile"]
+  },
+  "product": {
+    "hero": {
+      "badge": "One system. Any business.",
+      "headline1": "Clarity drives",
+      "headline2": "better business.",
+      "desc": "Leo Software brings orders, inventory, payments, and staff into one clean system — so you can focus on what matters, not the tools.",
+      "trial": "Start for free",
+      "seeHow": "See how it works",
+      "points": ["No credit card required", "Setup in under 5 minutes", "Cancel anytime"]
+    },
+    "socialProof": "4,200+ businesses trust Leo Software",
+    "socialCategories": {
+      "restaurants": "Restaurants",
+      "retailShops": "Retail Shops",
+      "warehouses": "Warehouses",
+      "foodTrucks": "Food Trucks"
+    },
+    "features": {
+      "eyebrow": "What Leo does",
+      "headline": "Everything in one place. Nothing in the way.",
+      "f1title": "Live analytics, always on.",
+      "f1desc": "Your dashboard updates in real time — sales by hour, top items, staff performance, and daily revenue. No end-of-day report needed. The picture is always current.",
+      "f1link": "Explore the dashboard",
+      "f2title": "Payments without the friction.",
+      "f2desc": "Accept card, cash, and mobile payments in one flow. Split bills, process refunds, and reconcile automatically. Leo handles the transaction so your team handles the guest.",
+      "f2link": "See payment features",
+      "f3title": "Multiple locations, one view.",
+      "f3desc": "Managing two venues or twenty, Leo gives you a single control panel. Compare performance across sites, push menu updates everywhere at once, and set location-specific rules.",
+      "f3link": "Learn about multi-location"
+    },
+    "industries": {
+      "eyebrow": "Built for your industry",
+      "headline": "One platform. Every operation.",
+      "restaurant": "Restaurant",
+      "shop": "Shop",
+      "warehouse": "Warehouse",
+      "restHeadline": "Built for kitchens that never stop.",
+      "restNote": "Used by sit-down restaurants, cafes, and bar and grill operations.",
+      "restFeatures": [
+        "Table and floor-plan management",
+        "Course-by-course ticket routing to kitchen display",
+        "Split bills and custom modifiers",
+        "Staff shift tracking and tipping reports",
+        "Real-time allergen and menu updates"
+      ],
+      "shopHeadline": "Retail-ready from day one.",
+      "shopNote": "Ideal for boutiques, convenience stores, and specialty retailers.",
+      "shopFeatures": [
+        "Barcode scan and fast cart checkout",
+        "Inventory reorder alerts and supplier sync",
+        "Customer loyalty and discount programs",
+        "Multi-variant product management (size, color)",
+        "End-of-day sales reconciliation"
+      ],
+      "warehouseHeadline": "Stock under control, always.",
+      "warehouseNote": "Designed for fulfilment centres, food distributors, and stockrooms.",
+      "warehouseFeatures": [
+        "Inbound goods receiving and batch scanning",
+        "Location-based bin and shelf tracking",
+        "Low-stock and expiry date alerts",
+        "Purchase order management",
+        "Full audit trail for every movement"
+      ]
+    },
+    "testimonial": {
+      "quote": "Before Leo, we were managing our kitchen, inventory, and payments across three different tools. Now it's one screen. Our close-out time dropped from forty minutes to under ten.",
+      "name": "Maria Haugen",
+      "role": "Owner, Brygga Kitchen — Oslo, Norway"
+    },
+    "cta": {
+      "eyebrow": "Get started today",
+      "headline1": "Less complexity.",
+      "headline2": "More business.",
+      "desc": "Join 4,200+ businesses that replaced spreadsheets and separate tools with one focused system. Free for 14 days.",
+      "button": "Start your free trial",
+      "docs": "Read the docs",
+      "fineprint": "No credit card required. Cancel anytime. GDPR compliant."
+    }
+  },
+  "pricingPage": {
+    "hero": {
+      "badge": "Transparent pricing",
+      "headline1": "Pay for what you use.",
+      "headline2": "Nothing more.",
+      "sub": "All plans include a 14-day free trial. No credit card required. Cancel anytime."
+    },
+    "tiers": {
+      "starterName": "Starter",
+      "proName": "Pro",
+      "enterpriseName": "Enterprise",
+      "perMonth": "/mo",
+      "custom": "Custom",
+      "starterDesc": "Everything a single-location business needs to go live today.",
+      "proDesc": "The full platform for growing businesses that move fast.",
+      "enterpriseDesc": "Dedicated infrastructure and SLA for large-scale operations.",
+      "mostPopular": "Most popular",
+      "starterCta": "Start free trial",
+      "proCta": "Start free trial",
+      "enterpriseCta": "Talk to sales",
+      "starterFeatures": [
+        "Up to 3 registers",
+        "Inventory tracking (500 SKUs)",
+        "Card and cash payments",
+        "Daily revenue reports",
+        "Email support"
+      ],
+      "proFeatures": [
+        "Unlimited registers",
+        "Unlimited inventory SKUs",
+        "Multi-location (up to 5 sites)",
+        "Employee time and access control",
+        "Live analytics dashboard",
+        "Priority support and onboarding call",
+        "API access"
+      ],
+      "enterpriseFeatures": [
+        "Unlimited locations",
+        "Custom integrations and API access",
+        "Dedicated account manager",
+        "SLA 99.99% uptime guarantee",
+        "On-site training and rollout",
+        "Custom reporting"
+      ]
+    },
+    "includes": {
+      "eyebrow": "All plans include",
+      "items": [
+        "Free 14-day trial",
+        "No credit card required",
+        "Cancel anytime",
+        "Unlimited transactions",
+        "Automatic updates",
+        "SSL and data encryption",
+        "GDPR compliant hosting",
+        "Onboarding guides"
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "headline": "Everything you need to know.",
+      "items": [
+        { "q": "Is there a free trial?", "a": "Yes — every plan starts with a 14-day free trial. No credit card required. You can cancel at any time before the trial ends." },
+        { "q": "Can I switch plans later?", "a": "Absolutely. Upgrade or downgrade at any time from your account settings. Changes take effect immediately." },
+        { "q": "What payment methods do you accept?", "a": "We accept all major credit and debit cards, as well as bank transfers for annual plans. All payments are processed securely." },
+        { "q": "Does Leo support multiple currencies?", "a": "Yes. Leo handles EUR, GBP, USD, and most major currencies. Currency is set per location." },
+        { "q": "What hardware does Leo work with?", "a": "Leo works with any modern tablet, POS terminal, receipt printer, and barcode scanner. We also sell certified hardware bundles." },
+        { "q": "Is my data secure?", "a": "All data is encrypted in transit and at rest. We are GDPR compliant and host on EU infrastructure. SOC 2 Type II certification is in progress." }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Ready to run a tighter operation?",
+      "headline1": "Your next shift starts",
+      "headline2": "with better software.",
+      "desc": "Join 4,200+ businesses that replaced fragmented tools with one platform that actually keeps up with them.",
+      "button": "Start free trial — 14 days",
+      "seeProduct": "See the product"
+    }
+  },
+  "notFound": {
+    "title": "404 Page Not Found",
+    "desc": "Did you forget to add the page to the router?"
+  },
+  "common": {
+    "startFreeTrial": "Start free trial",
+    "languageLabel": "Change language"
+  }
+}
