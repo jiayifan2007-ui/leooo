@@ -164,80 +164,69 @@
   },
   "product": {
     "hero": {
-      "badge": "One system. Any business.",
-      "headline1": "Clarity drives",
-      "headline2": "better business.",
-      "desc": "Leo Software brings orders, inventory, payments, and staff into one clean system — so you can focus on what matters, not the tools.",
+      "badge": "Five products. One operating system.",
+      "headline1": "Run every operation.",
+      "headline2": "Keep every team in sync.",
+      "desc": "From a restaurant floor to a warehouse aisle, Leo connects the work, stock, people, and decisions that move your business forward.",
       "trial": "Start for free",
-      "seeHow": "See how it works",
-      "points": ["No credit card required", "Setup in under 5 minutes", "Cancel anytime"]
+      "seeHow": "Explore restaurant POS",
+      "points": ["Built for real teams", "Grows with every location", "Clear daily close"]
     },
-    "socialProof": "4,200+ businesses trust Leo Software",
-    "socialCategories": {
-      "restaurants": "Restaurants",
-      "retailShops": "Retail Shops",
-      "warehouses": "Warehouses",
-      "foodTrucks": "Food Trucks"
-    },
-    "features": {
-      "eyebrow": "What Leo does",
-      "headline": "Everything in one place. Nothing in the way.",
-      "f1title": "Live analytics, always on.",
-      "f1desc": "Your dashboard updates in real time — sales by hour, top items, staff performance, and daily revenue. No end-of-day report needed. The picture is always current.",
-      "f1link": "Explore the dashboard",
-      "f2title": "Payments without the friction.",
-      "f2desc": "Accept card, cash, and mobile payments in one flow. Split bills, process refunds, and reconcile automatically. Leo handles the transaction so your team handles the guest.",
-      "f2link": "See payment features",
-      "f3title": "Multiple locations, one view.",
-      "f3desc": "Managing two venues or twenty, Leo gives you a single control panel. Compare performance across sites, push menu updates everywhere at once, and set location-specific rules.",
-      "f3link": "Learn about multi-location"
-    },
-    "industries": {
-      "eyebrow": "Built for your industry",
-      "headline": "One platform. Every operation.",
-      "restaurant": "Restaurant",
-      "shop": "Shop",
-      "warehouse": "Warehouse",
-      "restHeadline": "Built for kitchens that never stop.",
-      "restNote": "Used by sit-down restaurants, cafes, and bar and grill operations.",
-      "restFeatures": [
-        "Table and floor-plan management",
-        "Course-by-course ticket routing to kitchen display",
-        "Split bills and custom modifiers",
-        "Staff shift tracking and tipping reports",
-        "Real-time allergen and menu updates"
-      ],
-      "shopHeadline": "Retail-ready from day one.",
-      "shopNote": "Ideal for boutiques, convenience stores, and specialty retailers.",
-      "shopFeatures": [
-        "Barcode scan and fast cart checkout",
-        "Inventory reorder alerts and supplier sync",
-        "Customer loyalty and discount programs",
-        "Multi-variant product management (size, color)",
-        "End-of-day sales reconciliation"
-      ],
-      "warehouseHeadline": "Stock under control, always.",
-      "warehouseNote": "Designed for fulfilment centres, food distributors, and stockrooms.",
-      "warehouseFeatures": [
-        "Inbound goods receiving and batch scanning",
-        "Location-based bin and shelf tracking",
-        "Low-stock and expiry date alerts",
-        "Purchase order management",
-        "Full audit trail for every movement"
+    "suite": {
+      "eyebrow": "The Leo product suite",
+      "headline": "One platform, shaped for the way you operate.",
+      "desc": "Start with the product that fits today, then expand into the tools your operation needs next.",
+      "cards": [
+        { "id": "restaurant", "title": "Restaurant POS", "description": "A connected service flow from cashier to kitchen, server, and guest.", "highlight": "Explore the workflow" },
+        { "id": "store", "title": "Store POS", "description": "Simple product, stock, and checkout management for everyday retail.", "highlight": "Keep stock clear" },
+        { "id": "warehouse", "title": "Warehouse POS", "description": "Advanced inventory control, analysis, and configurable operations.", "highlight": "Work at scale" },
+        { "id": "erp", "title": "Custom ERP", "description": "A configurable control centre for larger companies and chains.", "highlight": "Connect the business" },
+        { "id": "app", "title": "Loyalty app", "description": "Give customers a simple reason to return, wherever they are.", "highlight": "Build repeat visits" }
       ]
     },
-    "testimonial": {
-      "quote": "Before Leo, we were managing our kitchen, inventory, and payments across three different tools. Now it's one screen. Our close-out time dropped from forty minutes to under ten.",
-      "name": "Maria Haugen",
-      "role": "Owner, Brygga Kitchen — Oslo, Norway"
+    "restaurant": {
+      "eyebrow": "Restaurant POS",
+      "headline": "The whole restaurant, moving as one.",
+      "desc": "Leo gives every role the right view at the right moment, so orders move cleanly from the guest to the kitchen and back to the table.",
+      "printersValue": "20",
+      "printersLabel": "kitchen printers per restaurant",
+      "tabletsValue": "20",
+      "tabletsLabel": "kitchen tablets per restaurant",
+      "flowTitle": "One order. Every team aligned.",
+      "flow": [
+        { "title": "Cashier", "desc": "Capture orders, payments, tables, modifiers, and split bills in a restaurant-first POS." },
+        { "title": "Kitchen", "desc": "Send each item to the right printer or tablet station so the team can prepare without missed tickets." },
+        { "title": "Server", "desc": "Take and update orders from a tablet while staying with the guests on the floor." },
+        { "title": "Customer", "desc": "Let guests order from their phone by QR code or from a customer-facing tablet." }
+      ],
+      "channelsTitle": "Order from every right place",
+      "channels": ["Server tablet ordering", "Guest QR / phone ordering", "Customer tablet ordering"],
+      "capabilities": [
+        "Restaurant-specific POS design for tables, courses, modifiers, split bills, and fast service.",
+        "Choose the kitchen route that fits: printers, kitchen tablets, or both — with up to 20 of each.",
+        "Send a clear end-of-day summary to your email, so every close is easy to review."
+      ]
+    },
+    "platforms": {
+      "eyebrow": "More ways to run the business",
+      "headline": "Move from daily work to full operational control.",
+      "desc": "Each Leo product has a focused job. Together, they give growing teams one reliable operating picture.",
+      "cards": [
+        { "id": "store", "title": "Store POS software", "description": "A simple POS for knowing what you have, selling it quickly, and managing your products without extra complexity.", "highlight": "Product and stock management, plus end-of-day email summaries." },
+        { "id": "warehouse", "title": "Warehouse POS software", "description": "An advanced, configurable system for complex product operations — built to make analysis, movement, and management easier.", "highlight": "Deep inventory control with configurable workflows." },
+        { "id": "erp", "title": "Custom ERP", "description": "For large warehouses, companies, and restaurant chains that need a system built around their own operation.", "highlight": "Manage suppliers, sourcing, products, inbound and outbound work, and more." },
+        { "id": "app", "title": "Your branded loyalty app", "description": "A customer experience for your restaurant, store, or warehouse — available in the App Store, Google Play, and on the web.", "highlight": "Reward returning customers with points instead of paper cards or a separate custom build." }
+      ],
+      "appCalloutTitle": "A loyalty experience that lives wherever customers do.",
+      "appCalloutDesc": "Offer points, encourage repeat visits, and make your brand easy to reach from a phone, an app store, or a browser."
     },
     "cta": {
-      "eyebrow": "Get started today",
-      "headline1": "Less complexity.",
-      "headline2": "More business.",
-      "desc": "Join 4,200+ businesses that replaced spreadsheets and separate tools with one focused system. Free for 14 days.",
+      "eyebrow": "Ready to simplify the operation?",
+      "headline1": "Start with the system",
+      "headline2": "your business needs now.",
+      "desc": "Whether you run a single restaurant, a busy store, a warehouse, or an entire chain, Leo gives your team one place to work from.",
       "button": "Start your free trial",
-      "docs": "Read the docs",
+      "explore": "Explore the suite",
       "fineprint": "No credit card required. Cancel anytime. GDPR compliant."
     }
   },

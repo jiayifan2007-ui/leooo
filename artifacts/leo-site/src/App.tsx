@@ -2,7 +2,6 @@ import { type ReactNode, lazy, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@workspace/leo-software/components/ui/toaster';
-import { TooltipProvider } from '@workspace/leo-software/components/ui/tooltip';
 import SiteLayout from '@/layouts/SiteLayout';
 import NotFound from '@/pages/not-found';
 import {
@@ -57,12 +56,10 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+        <Router />
+      </WouterRouter>
+      <Toaster />
     </QueryClientProvider>
   );
 }

@@ -164,81 +164,70 @@
   },
   "product": {
     "hero": {
-      "badge": "Um sistema. Qualquer negócio.",
-      "headline1": "A clareza",
-      "headline2": "impulsiona o negócio.",
-      "desc": "O Leo Software reúne pedidos, inventário, pagamentos e equipa num único sistema — para se focar no que importa, não nas ferramentas.",
+      "badge": "Cinco produtos. Um sistema operativo.",
+      "headline1": "Gira toda a operação.",
+      "headline2": "Mantenha cada equipa sincronizada.",
+      "desc": "Da sala de um restaurante ao corredor de um armazém, o Leo liga o trabalho, o stock, as pessoas e as decisões que fazem avançar o seu negócio.",
       "trial": "Começar grátis",
-      "seeHow": "Ver como funciona",
-      "points": ["Sem cartão de crédito", "Configuração em menos de 5 minutos", "Cancele quando quiser"]
+      "seeHow": "Explorar POS para restaurantes",
+      "points": ["Criado para equipas reais", "Cresce com cada localização", "Fecho diário claro"]
     },
-    "socialProof": "Mais de 4.200 empresas confiam no Leo Software",
-    "socialCategories": {
-      "restaurants": "Restaurantes",
-      "retailShops": "Lojas de Retalho",
-      "warehouses": "Armazéns",
-      "foodTrucks": "Food Trucks"
-    },
-    "features": {
-      "eyebrow": "O que o Leo faz",
-      "headline": "Tudo num só lugar. Nada no caminho.",
-      "f1title": "Análises em tempo real, sempre ligadas.",
-      "f1desc": "O seu painel atualiza-se em tempo real — vendas por hora, melhores itens, desempenho da equipa e receitas diárias. Sem relatório de fim de dia. O panorama está sempre atualizado.",
-      "f1link": "Explorar o painel",
-      "f2title": "Pagamentos sem atritos.",
-      "f2desc": "Aceite pagamentos por cartão, numerário e telemóvel num só fluxo. Divida contas, processe devoluções e concilie automaticamente. O Leo trata da transação para que a sua equipa trate do cliente.",
-      "f2link": "Ver funcionalidades de pagamento",
-      "f3title": "Várias localizações, uma visão.",
-      "f3desc": "Gestione dois ou vinte espaços, o Leo dá-lhe um único painel de controlo. Compare o desempenho entre espaços, publique atualizações de ementa em todos de uma vez e defina regras por localização.",
-      "f3link": "Saber mais sobre multi-localização"
-    },
-    "industries": {
-      "eyebrow": "Concebido para a sua indústria",
-      "headline": "Uma plataforma. Todas as operações.",
-      "restaurant": "Restaurante",
-      "shop": "Loja",
-      "warehouse": "Armazém",
-      "restHeadline": "Concebido para cozinhas que nunca param.",
-      "restNote": "Usado por restaurantes, cafés e operações de bar e grelhados.",
-      "restFeatures": [
-        "Gestão de mesas e plantação do salão",
-        "Encaminhamento de pedidos por prato para o ecrã de cozinha",
-        "Contas divididas e modificadores personalizados",
-        "Registo de turnos de equipa e relatórios de gorjetas",
-        "Atualizações de alergénios e ementa em tempo real"
-      ],
-      "shopHeadline": "Pronto para o retalho desde o primeiro dia.",
-      "shopNote": "Ideal para boutiques, lojas de conveniência e retalhistas especializados.",
-      "shopFeatures": [
-        "Leitura de código de barras e checkout rápido",
-        "Alertas de reposição de stock e sincronização com fornecedores",
-        "Programas de fidelização e descontos",
-        "Gestão de produtos multi-variante (tamanho, cor)",
-        "Conciliação de vendas no fim do dia"
-      ],
-      "warehouseHeadline": "Stock sob controlo, sempre.",
-      "warehouseNote": "Concebido para centros de distribuição, distribuidores alimentares e armazenistas.",
-      "warehouseFeatures": [
-        "Receção de mercadorias e leitura por lote",
-        "Localização por contentor e prateleira",
-        "Alertas de stock baixo e de validade",
-        "Gestão de encomendas de compra",
-        "Trilho de auditoria completo para cada movimento"
+    "suite": {
+      "eyebrow": "A suite de produtos Leo",
+      "headline": "Uma plataforma, moldada à forma como trabalha.",
+      "desc": "Comece pelo produto que precisa hoje e expanda para as ferramentas que a sua operação necessitar amanhã.",
+      "cards": [
+        { "id": "restaurant", "title": "POS para restaurantes", "description": "Um fluxo de serviço ligado, da caixa à cozinha, ao empregado e ao cliente.", "highlight": "Explorar o fluxo" },
+        { "id": "store", "title": "POS para lojas", "description": "Gestão simples de produtos, stock e vendas para o retalho do dia a dia.", "highlight": "Clarificar o stock" },
+        { "id": "warehouse", "title": "POS para armazéns", "description": "Controlo de inventário avançado, análise e operações configuráveis.", "highlight": "Trabalhar à escala" },
+        { "id": "erp", "title": "ERP personalizado", "description": "Um centro de controlo configurável para empresas e cadeias maiores.", "highlight": "Ligar o negócio" },
+        { "id": "app", "title": "App de fidelização", "description": "Dê aos clientes uma razão simples para voltar, onde quer que estejam.", "highlight": "Criar regressos" }
       ]
     },
-    "testimonial": {
-      "quote": "Antes do Leo, geríamos a nossa cozinha, inventário e pagamentos em três ferramentas diferentes. Agora é um único ecrã. O tempo de fecho passou de quarenta minutos para menos de dez.",
-      "name": "Maria Haugen",
-      "role": "Proprietária, Brygga Kitchen — Oslo, Noruega"
+    "restaurant": {
+      "eyebrow": "POS para restaurantes",
+      "headline": "Todo o restaurante, a funcionar como um só.",
+      "desc": "O Leo dá a cada função a vista certa no momento certo, para que os pedidos fluam do cliente para a cozinha e regressem à mesa sem erros.",
+      "printersValue": "20",
+      "printersLabel": "impressoras de cozinha por restaurante",
+      "tabletsValue": "20",
+      "tabletsLabel": "tablets de cozinha por restaurante",
+      "flowTitle": "Um pedido. Todas as equipas alinhadas.",
+      "flow": [
+        { "title": "Caixa", "desc": "Registe pedidos, pagamentos, mesas, modificadores e contas divididas num POS pensado para restaurantes." },
+        { "title": "Cozinha", "desc": "Envie cada item para a impressora ou tablet certo, para a equipa preparar sem perder pedidos." },
+        { "title": "Empregado", "desc": "Registe e atualize pedidos num tablet enquanto permanece junto dos clientes na sala." },
+        { "title": "Cliente", "desc": "Deixe os clientes pedir pelo telemóvel através de QR ou num tablet disponível ao cliente." }
+      ],
+      "channelsTitle": "Pedir no lugar certo",
+      "channels": ["Pedidos em tablet pelo empregado", "Pedidos por QR / telemóvel", "Pedidos em tablet do cliente"],
+      "capabilities": [
+        "Design de POS específico para restaurantes: mesas, pratos, modificadores, contas divididas e serviço rápido.",
+        "Escolha o fluxo de cozinha ideal: impressoras, tablets de cozinha ou ambos — até 20 de cada.",
+        "Envie para o seu e-mail um resumo claro de fim de dia para rever cada fecho com facilidade."
+      ]
+    },
+    "platforms": {
+      "eyebrow": "Mais formas de gerir o negócio",
+      "headline": "Do trabalho diário ao controlo operacional completo.",
+      "desc": "Cada produto Leo tem uma função focada. Em conjunto, dão às equipas em crescimento uma visão operacional de confiança.",
+      "cards": [
+        { "id": "store", "title": "Software POS para lojas", "description": "Um POS simples para saber o que tem, vender depressa e gerir produtos sem complexidade extra.", "highlight": "Gestão de produtos e stock, com resumo diário enviado por e-mail." },
+        { "id": "warehouse", "title": "Software POS para armazéns", "description": "Um sistema avançado e configurável para operações complexas de produtos — criado para simplificar a análise, os movimentos e a gestão.", "highlight": "Controlo profundo de inventário com fluxos configuráveis." },
+        { "id": "erp", "title": "ERP personalizado", "description": "Para grandes armazéns, empresas e cadeias de restaurantes que precisam de um sistema adaptado à sua operação.", "highlight": "Gira fornecedores, aprovisionamento, produtos, entradas, saídas e muito mais." },
+        { "id": "app", "title": "A sua app de fidelização", "description": "Uma experiência para clientes do seu restaurante, loja ou armazém — disponível na App Store, Google Play e na web.", "highlight": "Recompense clientes que regressam com pontos, sem cartões em papel nem um desenvolvimento personalizado à parte." }
+      ],
+      "appCalloutTitle": "Uma experiência de fidelização que vive onde os clientes vivem.",
+      "appCalloutDesc": "Ofereça pontos, incentive novas visitas e torne a sua marca fácil de alcançar num telemóvel, numa loja de aplicações ou no navegador."
     },
     "cta": {
-      "eyebrow": "Comece hoje",
-      "headline1": "Menos complexidade.",
-      "headline2": "Mais negócio.",
-      "desc": "Junte-se a mais de 4.200 empresas que trocaram folhas de cálculo e ferramentas separadas por um sistema focado. Grátis durante 14 dias.",
+      "eyebrow": "Pronto para simplificar a operação?",
+      "headline1": "Comece pelo sistema",
+      "headline2": "de que o seu negócio precisa agora.",
+      "desc": "Quer tenha um restaurante, uma loja movimentada, um armazém ou uma cadeia inteira, o Leo dá à sua equipa um único lugar para trabalhar.",
       "button": "Começar o seu teste gratuito",
-      "docs": "Ler a documentação",
-      "fineprint": "Sem cartão de crédito. Cancele quando quiser. Conformidade RGPD."
+      "explore": "Explorar a suite",
+      "fineprint": "Sem cartão de crédito. Cancele quando quiser. Em conformidade com o RGPD."
     }
   },
   "pricingPage": {

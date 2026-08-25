@@ -8,8 +8,9 @@ real `artifacts/leo-site` react-vite app (preview path `/`, static spa).
 
 - Homepage `/` = **Bold** design (`mockups/Bold.tsx`): amber gradient hero "Command Your Business.",
   huge stat strip, serial-number feature showcase, three industry bands, demo section.
-- Product `"/product"` = **Focused** design (`mockups/Focused.tsx`): cream split-hero with a coded
-  POS terminal mockup, alternating feature blocks, interactive industry tabs, testimonial.
+- Product `"/product"` = **Focused** design, reworked around the real Leo suite: five product
+  lines (restaurant POS, store POS, warehouse POS, custom ERP, loyalty app), with the restaurant
+  cashier-to-kitchen-to-server-to-customer workflow as the lead section.
 - Pricing `"/pricing"` = **Grounded** pricing treatment (`mockups/Grounded.tsx`): dark charcoal
   section, neutral charcoal cards, Pro card with amber border + glow + amber "Most popular" badge,
   amber fill CTA on highlighted plan, outlined/ghost buttons elsewhere.
@@ -31,3 +32,9 @@ truth). Selection persists to localStorage `leo-site-language`. **Why:** user re
 Portuguese (Portugal) and Chinese (Mainland) languages; per-page array content (features/FAQ) is
 fetched with `returnObjects: true`, and data-driven plans avoid literal `'Custom'` string checks
 (use an `isCustom` flag instead so translated plan names don't break styling).
+
+**Design-system caveat:** Leo Site can safely consume the system's token stylesheet, but its
+Radix-based UI components may resolve a duplicate React instance in the Vite preview. Avoid adding
+those component imports until that workspace resolution is fixed; use semantic token utility classes
+for app-specific compositions instead. **Why:** importing the system tooltip provider produced an
+invalid-hook-call runtime error even though the page and production build succeeded.

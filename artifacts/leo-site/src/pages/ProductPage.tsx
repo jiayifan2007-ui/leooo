@@ -1,29 +1,41 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
-import type { TFunction } from 'i18next';
-import RevealItem from '@/components/RevealItem';
 import {
   ArrowRight,
   Check,
-  Zap,
-  ShoppingCart,
-  UtensilsCrossed,
+  ChefHat,
+  ClipboardList,
+  Database,
+  Globe2,
   Package,
-  BarChart3,
-  CreditCard,
-  Users,
-  MapPin,
-  ChevronRight,
-  Star,
+  Printer,
+  QrCode,
+  ReceiptText,
+  Send,
+  ShoppingBag,
+  Smartphone,
+  Store,
+  Tablet,
+  Truck,
+  UsersRound,
+  Warehouse,
 } from 'lucide-react';
 import POSMockup from '@/components/POSMockup';
 
-type Industry = 'restaurant' | 'shop' | 'warehouse';
+type TranslationRecord = Record<string, string>;
+
+type ProductCard = {
+  id: string;
+  title: string;
+  description: string;
+  highlight: string;
+};
 
 function useReveal(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+
   useEffect(() => {
     if (!ref.current) return;
     const observer = new IntersectionObserver(
@@ -38,105 +50,72 @@ function useReveal(threshold = 0.15) {
     observer.observe(ref.current);
     return () => observer.disconnect();
   }, [threshold]);
+
   return { ref, visible };
 }
 
-// ─── Hero ────────────────────────────────────────────────────────────────────
+function Eyebrow({ children }: { children: string }) {
+  return <p className="text-xs font-bold tracking-[0.16em] uppercase text-primary">{children}</p>;
+}
 
 function Hero() {
   const { t } = useTranslation();
   const { ref, visible } = useReveal(0.05);
+  const points = t('product.hero.points', { returnObjects: true }) as unknown as string[];
+
   return (
-    <section style={{ backgroundColor: '#FFFBEB' }}>
-      <div className="max-w-6xl mx-auto px-6 py-20 lg:py-28 pt-28 lg:pt-36" ref={ref}>
-        <div className="grid lg:grid-cols-[55fr_45fr] gap-16 items-center">
-          {/* Left */}
+    <section className="bg-background">
+      <div className="max-w-6xl mx-auto px-6 pt-28 pb-18 lg:pt-36 lg:pb-24" ref={ref}>
+        <div className="grid lg:grid-cols-[1fr_0.85fr] gap-12 lg:gap-16 items-center">
           <div
-            className="space-y-8 transition-all duration-700"
+            className="space-y-7 transition-all duration-700"
             style={{
               opacity: visible ? 1 : 0,
-              transform: visible ? 'translateY(0)' : 'translateY(32px)',
+              transform: visible ? 'translateY(0)' : 'translateY(28px)',
             }}
           >
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border"
-              style={{
-                backgroundColor: '#FEF3C7',
-                borderColor: 'rgba(245,158,11,0.3)',
-              }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: '#F59E0B' }}
-              />
-              <span
-                className="text-xs font-semibold tracking-wide uppercase"
-                style={{ color: '#92400E' }}
-              >
-                {t('product.hero.badge')}
-              </span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-border bg-accent px-3 py-1.5 text-accent-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              <span className="text-xs font-semibold tracking-wide uppercase">{t('product.hero.badge')}</span>
             </div>
-
             <h1
-              className="font-bold leading-tight tracking-tight"
-              style={{
-                fontSize: 'clamp(36px, 6vw, 64px)',
-                color: '#0C0A09',
-                letterSpacing: '-0.03em',
-              }}
+              className="max-w-3xl text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-[-0.045em] text-foreground"
               data-testid="text-product-headline"
             >
               {t('product.hero.headline1')}
               <br />
-              <span style={{ color: '#F59E0B' }}>{t('product.hero.headline2')}</span>
+              <span className="text-primary">{t('product.hero.headline2')}</span>
             </h1>
-
-            <p className="text-lg leading-relaxed max-w-lg" style={{ color: '#78716C' }}>
-              {t('product.hero.desc')}
-            </p>
-
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">{t('product.hero.desc')}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-base font-bold transition-all hover:scale-105"
-                style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-primary-border bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.02]"
                 data-testid="button-product-trial"
               >
                 {t('product.hero.trial')}
                 <ArrowRight size={16} />
               </Link>
               <a
-                href="#features"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 text-base font-semibold transition-colors hover:border-amber-500"
-                style={{ borderColor: '#44403C', color: '#1C1917' }}
-                data-testid="link-product-features"
+                href="#restaurant-pos"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+                data-testid="link-product-restaurant"
               >
                 {t('product.hero.seeHow')}
-                <ChevronRight size={16} />
+                <ArrowRight size={16} />
               </a>
             </div>
-
-            <div className="flex flex-wrap items-center gap-6 pt-2">
-              {(t('product.hero.points', { returnObjects: true }) as unknown as string[]).map(
-                (item) => (
-                  <div key={item} className="flex items-center gap-1.5">
-                    <Check
-                      size={14}
-                      style={{ color: '#F59E0B' }}
-                      className="flex-shrink-0"
-                    />
-                    <span className="text-xs" style={{ color: '#78716C' }}>
-                      {item}
-                    </span>
-                  </div>
-                )
-              )}
+            <div className="flex flex-wrap gap-x-5 gap-y-2 pt-1">
+              {points.map((point) => (
+                <span key={point} className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                  <Check size={14} className="text-primary" />
+                  {point}
+                </span>
+              ))}
             </div>
           </div>
-
-          {/* Right — POS mockup */}
           <div
-            className="relative transition-all duration-700 delay-200"
+            className="relative transition-all duration-700 delay-150"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateY(0)' : 'translateY(24px)',
@@ -150,412 +129,230 @@ function Hero() {
   );
 }
 
-// ─── Social Proof Bar ────────────────────────────────────────────────────────
-
-function SocialProofBar() {
+function ProductSuite() {
   const { t } = useTranslation();
-  const categories = [
-    { icon: UtensilsCrossed, label: t('product.socialCategories.restaurants') },
-    { icon: ShoppingCart, label: t('product.socialCategories.retailShops') },
-    { icon: Package, label: t('product.socialCategories.warehouses') },
-    { icon: Zap, label: t('product.socialCategories.foodTrucks') },
-  ];
+  const productCards = t('product.suite.cards', { returnObjects: true }) as unknown as ProductCard[];
+  const icons = [ChefHat, Store, Warehouse, Database, Smartphone];
 
   return (
-    <section
-      className="py-6 border-y"
-      style={{ backgroundColor: '#1C1917', borderColor: '#44403C' }}
-    >
+    <section id="products" className="border-y border-border bg-card py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8">
-          <span
-            className="text-sm font-semibold whitespace-nowrap"
-            style={{ color: '#A8A29E' }}
-            data-testid="text-social-proof"
-          >
-            {t('product.socialProof')}
-          </span>
-
-          <div className="h-px w-full sm:w-px sm:h-5" style={{ backgroundColor: '#44403C' }} />
-
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map(({ icon: Icon, label }) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium"
-                style={{
-                  backgroundColor: '#292524',
-                  borderColor: '#44403C',
-                  color: '#A8A29E',
-                }}
-              >
-                <Icon size={12} style={{ color: '#F59E0B' }} />
-                {label}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Features ────────────────────────────────────────────────────────────────
-
-function Features() {
-  const { t } = useTranslation();
-  const features = [
-    { icon: BarChart3, title: t('product.features.f1title'), description: t('product.features.f1desc'), link: t('product.features.f1link') },
-    { icon: CreditCard, title: t('product.features.f2title'), description: t('product.features.f2desc'), link: t('product.features.f2link') },
-    { icon: MapPin, title: t('product.features.f3title'), description: t('product.features.f3desc'), link: t('product.features.f3link') },
-  ];
-
-  return (
-    <section id="features" style={{ backgroundColor: '#FFFBEB' }} className="py-24">
-      <div className="max-w-5xl mx-auto px-6 space-y-24">
-        {/* Section header */}
-        <div className="text-center space-y-3">
-          <p
-            className="text-xs font-bold tracking-widest uppercase"
-            style={{ color: '#F59E0B' }}
-          >
-            {t('product.features.eyebrow')}
-          </p>
-          <h2
-            className="text-4xl font-bold tracking-tight"
-            style={{ color: '#0C0A09' }}
-            data-testid="text-features-headline"
-          >
-            {t('product.features.headline')}
+        <div className="max-w-2xl mb-12">
+          <Eyebrow>{t('product.suite.eyebrow')}</Eyebrow>
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground" data-testid="text-suite-headline">
+            {t('product.suite.headline')}
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('product.suite.desc')}</p>
         </div>
-
-        {features.map((feature, i) => {
-          const Icon = feature.icon;
-          const isEven = i % 2 === 0;
-
-          return (
-            <RevealItem
-              key={feature.title}
-              delay={0}
-              className={`grid md:grid-cols-2 gap-16 items-center ${
-                isEven ? '' : 'md:[&>*:first-child]:order-last'
-              }`}
-            >
-              {/* Icon tile */}
-              <div className="flex justify-center">
-                <div
-                  className="w-56 h-56 rounded-3xl flex items-center justify-center shadow-xl border"
-                  style={{ backgroundColor: '#1C1917', borderColor: '#44403C' }}
-                >
-                  <Icon size={80} style={{ color: '#F59E0B' }} strokeWidth={1.2} />
-                </div>
-              </div>
-
-              {/* Text */}
-              <div className="space-y-5">
-                <h3
-                  className="text-3xl font-bold leading-tight tracking-tight"
-                  style={{ color: '#0C0A09' }}
-                >
-                  {feature.title}
-                </h3>
-                <p className="text-base leading-relaxed" style={{ color: '#78716C' }}>
-                  {feature.description}
+        <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-4">
+          {productCards.map((card, index) => {
+            const Icon = icons[index];
+            return (
+              <a
+                key={card.id}
+                href={card.id === 'restaurant' ? '#restaurant-pos' : '#platforms'}
+                className={`group rounded-xl border p-5 transition-transform hover:-translate-y-1 ${
+                  card.id === 'restaurant'
+                    ? 'border-primary-border bg-accent'
+                    : 'border-border bg-background'
+                }`}
+                data-testid={`link-suite-${card.id}`}
+              >
+                <Icon size={24} className="text-primary" strokeWidth={1.8} />
+                <h3 className="mt-8 text-lg font-bold tracking-tight text-foreground">{card.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.description}</p>
+                <p className="mt-5 inline-flex items-center gap-1 text-xs font-bold text-primary">
+                  {card.highlight}
+                  <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
                 </p>
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
-                  style={{ color: '#F59E0B' }}
-                  data-testid={`link-feature-${i}`}
-                >
-                  {feature.link}
-                  <ChevronRight size={16} />
-                </Link>
-              </div>
-            </RevealItem>
-          );
-        })}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 }
 
-// ─── Industry Tabs ───────────────────────────────────────────────────────────
-
-type IndustryContent = { headline: string; features: string[]; note: string };
-
-function getIndustryContent(t: TFunction, key: string): IndustryContent {
-  return {
-    headline: t(`product.industries.${key}Headline`),
-    features: t(`product.industries.${key}Features`, { returnObjects: true }) as unknown as string[],
-    note: t(`product.industries.${key}Note`),
-  };
-}
-
-function IndustryTabs() {
+function RestaurantFlow() {
   const { t } = useTranslation();
-  const [active, setActive] = useState<Industry>('restaurant');
-  const { ref, visible } = useReveal(0.1);
-
-  const industryContent: Record<Industry, IndustryContent> = {
-    restaurant: getIndustryContent(t, 'rest'),
-    shop: getIndustryContent(t, 'shop'),
-    warehouse: getIndustryContent(t, 'warehouse'),
-  };
-
-  const tabs: { id: Industry; icon: typeof UtensilsCrossed; label: string }[] = [
-    { id: 'restaurant', icon: UtensilsCrossed, label: t('product.industries.restaurant') },
-    { id: 'shop', icon: ShoppingCart, label: t('product.industries.shop') },
-    { id: 'warehouse', icon: Package, label: t('product.industries.warehouse') },
+  const flow = t('product.restaurant.flow', { returnObjects: true }) as unknown as TranslationRecord[];
+  const channels = t('product.restaurant.channels', { returnObjects: true }) as unknown as string[];
+  const capabilities = t('product.restaurant.capabilities', { returnObjects: true }) as unknown as string[];
+  const steps = [
+    { icon: ClipboardList, key: 'cashier' },
+    { icon: ChefHat, key: 'kitchen' },
+    { icon: Tablet, key: 'server' },
+    { icon: Smartphone, key: 'customer' },
   ];
 
-  const content = industryContent[active];
+  return (
+    <section id="restaurant-pos" className="bg-sidebar py-24 md:py-28">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+          <div>
+            <Eyebrow>{t('product.restaurant.eyebrow')}</Eyebrow>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight tracking-[-0.04em] text-sidebar-foreground" data-testid="text-restaurant-headline">
+              {t('product.restaurant.headline')}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{t('product.restaurant.desc')}</p>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="rounded-xl border border-sidebar-border bg-sidebar-accent p-4">
+                <Printer size={20} className="text-primary" />
+                <p className="mt-4 text-3xl font-bold text-sidebar-foreground">{t('product.restaurant.printersValue')}</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t('product.restaurant.printersLabel')}</p>
+              </div>
+              <div className="rounded-xl border border-sidebar-border bg-sidebar-accent p-4">
+                <Tablet size={20} className="text-primary" />
+                <p className="mt-4 text-3xl font-bold text-sidebar-foreground">{t('product.restaurant.tabletsValue')}</p>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t('product.restaurant.tabletsLabel')}</p>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-sidebar-border bg-sidebar-accent p-5 md:p-7">
+            <p className="text-sm font-bold text-sidebar-foreground">{t('product.restaurant.flowTitle')}</p>
+            <div className="mt-6 grid sm:grid-cols-2 gap-3">
+              {steps.map(({ icon: Icon, key }, index) => {
+                const item = flow[index];
+                return (
+                  <div key={key} className="relative rounded-xl border border-sidebar-border bg-sidebar p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                        <Icon size={18} />
+                      </span>
+                      <span className="text-xs font-bold text-primary">0{index + 1}</span>
+                    </div>
+                    <h3 className="mt-7 font-bold text-sidebar-foreground">{item.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-5 border-t border-sidebar-border pt-5">
+              <p className="text-xs font-bold tracking-[0.14em] uppercase text-primary">{t('product.restaurant.channelsTitle')}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {channels.map((channel, index) => {
+                  const Icon = [QrCode, Tablet, Smartphone][index];
+                  return (
+                    <span key={channel} className="inline-flex items-center gap-2 rounded-full border border-sidebar-border px-3 py-1.5 text-xs font-medium text-sidebar-foreground">
+                      <Icon size={14} className="text-primary" />
+                      {channel}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10 grid md:grid-cols-3 gap-3">
+          {capabilities.map((capability, index) => {
+            const Icon = [ReceiptText, Send, ShoppingBag][index];
+            return (
+              <div key={capability} className="flex gap-3 rounded-xl border border-sidebar-border bg-sidebar-accent p-5">
+                <Icon size={20} className="mt-0.5 shrink-0 text-primary" />
+                <p className="text-sm leading-relaxed text-sidebar-foreground">{capability}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PlatformCards() {
+  const { t } = useTranslation();
+  const cards = t('product.platforms.cards', { returnObjects: true }) as unknown as ProductCard[];
+  const icons = [Store, Warehouse, Truck, UsersRound];
 
   return (
-    <section
-      id="industries"
-      className="py-24"
-      style={{ backgroundColor: 'rgba(245, 245, 244, 0.3)' }}
-    >
-      <div ref={ref} className="max-w-5xl mx-auto px-6">
-        {/* Header */}
-        <div
-          className="text-center space-y-3 mb-14 transition-all duration-700"
-          style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(24px)' }}
-        >
-          <p
-            className="text-xs font-bold tracking-widest uppercase"
-            style={{ color: '#F59E0B' }}
-          >
-            {t('product.industries.eyebrow')}
-          </p>
-          <h2
-            className="text-4xl font-bold tracking-tight"
-            style={{ color: '#0C0A09' }}
-            data-testid="text-industries-headline"
-          >
-            {t('product.industries.headline')}
+    <section id="platforms" className="bg-background py-24 md:py-28">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-2xl">
+          <Eyebrow>{t('product.platforms.eyebrow')}</Eyebrow>
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-[-0.04em] text-foreground" data-testid="text-platforms-headline">
+            {t('product.platforms.headline')}
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t('product.platforms.desc')}</p>
         </div>
-
-        {/* Tab bar */}
-        <div className="flex justify-center mb-10">
-          <div
-            className="inline-flex rounded-xl p-1 gap-1"
-            style={{ backgroundColor: '#1C1917' }}
-          >
-            {tabs.map(({ id, icon: Icon, label }) => {
-              const isActive = active === id;
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setActive(id)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all"
-                  style={
-                    isActive
-                      ? { backgroundColor: '#F59E0B', color: '#0C0A09' }
-                      : { color: '#A8A29E', backgroundColor: 'transparent' }
-                  }
-                  data-testid={`button-industry-tab-${id}`}
-                >
-                  <Icon size={16} />
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Content panel */}
-        <div
-          className="rounded-2xl p-10 md:p-14 border"
-          style={{ backgroundColor: '#FFFBEB', borderColor: 'rgba(245,158,11,0.2)' }}
-        >
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div className="space-y-4">
-              <h3
-                className="text-2xl font-bold leading-snug"
-                style={{ color: '#0C0A09' }}
-                data-testid="text-industry-content-headline"
-              >
-                {content.headline}
-              </h3>
-              <p className="text-sm" style={{ color: '#78716C' }}>
-                {content.note}
-              </p>
-            </div>
-            <ul className="space-y-3">
-              {content.features.map((f) => (
-                <li key={f} className="flex items-start gap-3">
-                  <span
-                    className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border flex items-center justify-center"
-                    style={{
-                      backgroundColor: '#FEF3C7',
-                      borderColor: 'rgba(245,158,11,0.4)',
-                    }}
-                  >
-                    <Check size={12} style={{ color: '#F59E0B' }} />
+        <div className="mt-12 grid md:grid-cols-2 gap-5">
+          {cards.map((card, index) => {
+            const Icon = icons[index];
+            return (
+              <article key={card.id} className="rounded-2xl border border-border bg-card p-7 md:p-8" data-testid={`card-platform-${card.id}`}>
+                <div className="flex items-start justify-between gap-6">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+                    <Icon size={22} />
                   </span>
-                  <span className="text-sm leading-relaxed" style={{ color: '#44403C' }}>
-                    {f}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <span className="text-xs font-bold tracking-[0.14em] text-primary">0{index + 2}</span>
+                </div>
+                <h3 className="mt-10 text-2xl font-bold tracking-tight text-foreground">{card.title}</h3>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">{card.description}</p>
+                <div className="mt-6 flex items-center gap-2 border-t border-border pt-5 text-sm font-semibold text-foreground">
+                  <Check size={16} className="text-primary" />
+                  {card.highlight}
+                </div>
+              </article>
+            );
+          })}
         </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── Testimonial ─────────────────────────────────────────────────────────────
-
-function Testimonial() {
-  const { t } = useTranslation();
-  const { ref, visible } = useReveal(0.1);
-  return (
-    <section style={{ backgroundColor: '#FFFBEB' }} className="py-24">
-      <div className="max-w-4xl mx-auto px-6">
-        <div
-          ref={ref}
-          className="relative rounded-3xl px-10 py-14 md:px-16 md:py-20 overflow-hidden transition-all duration-700"
-          style={{
-            backgroundColor: '#1C1917',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(32px)',
-          }}
-        >
-          {/* Amber accent bar */}
-          <div
-            className="absolute top-0 left-0 w-1 h-full rounded-l-3xl"
-            style={{ backgroundColor: '#F59E0B' }}
-          />
-          {/* Decorative circle */}
-          <div
-            className="absolute -top-10 -right-10 w-48 h-48 rounded-full"
-            style={{ backgroundColor: 'rgba(245,158,11,0.05)' }}
-          />
-
-          {/* Stars */}
-          <div className="flex gap-1 mb-8">
-            {[1, 2, 3, 4, 5].map((s) => (
-              <Star key={s} size={16} fill="#F59E0B" style={{ color: '#F59E0B' }} />
-            ))}
-          </div>
-
-          {/* Quote */}
-          <blockquote
-            className="text-2xl md:text-3xl font-medium leading-relaxed mb-10 tracking-tight"
-            style={{ color: '#F5F5F4' }}
-            data-testid="text-testimonial-quote"
-          >
-            "{t('product.testimonial.quote')}"
-          </blockquote>
-
-          {/* Attribution */}
-          <div className="flex items-center gap-4">
-            <div
-              className="w-12 h-12 rounded-full border flex items-center justify-center"
-              style={{ backgroundColor: '#292524', borderColor: '#44403C' }}
-            >
-              <span className="text-lg font-bold" style={{ color: '#F59E0B' }}>
-                M
-              </span>
-            </div>
-            <div>
-              <p className="font-semibold" style={{ color: '#F5F5F4' }}>
-                {t('product.testimonial.name')}
-              </p>
-              <p className="text-sm" style={{ color: '#78716C' }}>
-                {t('product.testimonial.role')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── CTA Banner ──────────────────────────────────────────────────────────────
-
-function CTABanner() {
-  const { t } = useTranslation();
-  return (
-    <section style={{ backgroundColor: '#1C1917' }} className="py-24">
-      <div className="max-w-3xl mx-auto px-6 text-center space-y-8">
-        <div
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border"
-          style={{ backgroundColor: '#292524', borderColor: '#44403C' }}
-        >
-          <span
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ backgroundColor: '#F59E0B' }}
-          />
-          <span
-            className="text-xs font-semibold tracking-wide uppercase"
-            style={{ color: '#A8A29E' }}
-          >
-            {t('product.cta.eyebrow')}
+        <div className="mt-5 rounded-2xl border border-primary-border bg-accent p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+            <Globe2 size={24} />
           </span>
+          <div>
+            <p className="font-bold text-accent-foreground">{t('product.platforms.appCalloutTitle')}</p>
+            <p className="mt-1 text-sm leading-relaxed text-accent-foreground">{t('product.platforms.appCalloutDesc')}</p>
+          </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        <h2
-          className="font-bold leading-tight tracking-tight"
-          style={{ fontSize: 'clamp(32px, 6vw, 56px)', color: '#F5F5F4' }}
-          data-testid="text-product-cta-headline"
-        >
+function ClosingCTA() {
+  const { t } = useTranslation();
+  return (
+    <section className="bg-sidebar py-24">
+      <div className="max-w-3xl mx-auto px-6 text-center">
+        <Eyebrow>{t('product.cta.eyebrow')}</Eyebrow>
+        <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-[-0.04em] text-sidebar-foreground" data-testid="text-product-cta-headline">
           {t('product.cta.headline1')}
           <br />
-          <span style={{ color: '#FCD34D' }}>{t('product.cta.headline2')}</span>
+          <span className="text-primary">{t('product.cta.headline2')}</span>
         </h2>
-
-        <p className="text-lg leading-relaxed" style={{ color: '#A8A29E' }}>
-          {t('product.cta.desc')}
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{t('product.cta.desc')}</p>
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
           <Link
             href="/pricing"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold transition-all hover:scale-105"
-            style={{ backgroundColor: '#F59E0B', color: '#0C0A09' }}
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-primary-border bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-transform hover:scale-[1.02]"
             data-testid="button-product-final-cta"
           >
             {t('product.cta.button')}
             <ArrowRight size={16} />
           </Link>
           <a
-            href="#features"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border text-base font-semibold transition-colors"
-            style={{ borderColor: '#44403C', color: '#A8A29E' }}
-            data-testid="link-product-read-more"
+            href="#products"
+            className="inline-flex min-h-11 items-center justify-center rounded-xl border border-sidebar-border px-6 py-3 text-sm font-semibold text-sidebar-foreground transition-colors hover:bg-sidebar-accent"
+            data-testid="link-product-suite"
           >
-            {t('product.cta.docs')}
+            {t('product.cta.explore')}
           </a>
         </div>
-
-        <p className="text-xs" style={{ color: '#78716C' }}>
-          {t('product.cta.fineprint')}
-        </p>
+        <p className="mt-5 text-xs text-muted-foreground">{t('product.cta.fineprint')}</p>
       </div>
     </section>
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
 export default function ProductPage() {
   return (
     <>
       <Hero />
-      <SocialProofBar />
-      <Features />
-      <IndustryTabs />
-      <Testimonial />
-      <CTABanner />
+      <ProductSuite />
+      <RestaurantFlow />
+      <PlatformCards />
+      <ClosingCTA />
     </>
   );
 }
