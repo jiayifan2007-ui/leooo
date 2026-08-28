@@ -23,6 +23,12 @@ frontend-only by user preference (no backend, forms, auth, DB). Domain target is
 it; publish then add custom domain in publishing settings). Consumes `@workspace/leo-software`
 design system; no local copies of package components.
 
+**Product-page interaction:** Keep the five businesses separated in a horizontal selector directly
+below the main navigation. Selecting one must replace the intro content in place with a smooth
+transition; hover/focus must visibly lift and highlight the business option. On mobile, keep the
+selector horizontally scrollable without creating page-level overflow. **Why:** The user rejected a
+single combined product-suite narrative and explicitly asked to explore each business independently.
+
 **i18n:** site is localized via react-i18next + i18next-browser-languagedetector. Supported langs are
 `en`, `pt` (European Portuguese, pt-PT), `zh` (Mainland Mandarin, zh-CN). Resources live in
 `src/i18n/locales/<code>.json`; init in `src/i18n/index.ts` (imported in main.tsx). Language chooser

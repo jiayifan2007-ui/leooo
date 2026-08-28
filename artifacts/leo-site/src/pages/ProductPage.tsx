@@ -32,6 +32,22 @@ type ProductCard = {
   highlight: string;
 };
 
+type ProductId = 'restaurant' | 'store' | 'warehouse' | 'erp' | 'app';
+
+type ProductSelectorItem = {
+  id: ProductId;
+  label: string;
+  short: string;
+};
+
+type ProductIntro = {
+  eyebrow: string;
+  headline: string;
+  desc: string;
+  support: string;
+  cta: string;
+};
+
 function useReveal(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -58,10 +74,83 @@ function Eyebrow({ children }: { children: string }) {
   return <p className="text-xs font-bold tracking-[0.16em] uppercase text-primary">{children}</p>;
 }
 
-function Hero() {
+function ProductSelector({
+  selectedProduct,
+  onSelect,
+}: {
+  selectedProduct: ProductId;
+  onSelect: (product: ProductId) => void;
+}) {
+  const { t } = useTranslation();
+  const [hoveredProduct, setHoveredProduct] = useState<ProductId | null>(null);
+  const items = t('product.selector.items', { returnObjects: true }) as unknown as ProductSelectorItem[];
+  const icons = [ChefHat, Store, Warehouse, Database, Smartphone];
+
+  return (
+    <section className="border-y border-border bg-card pt-16" aria-label={t('product.selector.eyebrow')}>
+      <div className="max-w-6xl mx-auto px-6 py-4 md:py-5">
+        <div className="flex items-center justify-between gap-5">
+          <div className="hidden shrink-0 lg:block">
+            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">{t('product.selector.eyebrow')}</p>
+            <p className="mt-1 text-xs text-muted-foreground">{t('product.selector.hint')}</p>
+          </div>
+          <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto pb-1" role="tablist" aria-label={t('product.selector.title')}>
+            {items.map((item, index) => {
+              const Icon = icons[index];
+              const isSelected = selectedProduct === item.id;
+              const isHovered = hoveredProduct === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isSelected}
+                  aria-controls={`product-intro-${item.id}`}
+                  onClick={() => onSelect(item.id)}
+                  onMouseEnter={() => setHoveredProduct(item.id)}
+                  onMouseLeave={() => setHoveredProduct(null)}
+                  onFocus={() => setHoveredProduct(item.id)}
+                  onBlur={() => setHoveredProduct(null)}
+                  className={`group relative min-w-[154px] shrink-0 overflow-hidden rounded-xl border px-4 py-3 text-left transition-all duration-300 ease-out ${
+                    isSelected
+                      ? 'border-primary-border bg-accent text-accent-foreground shadow-sm'
+                      : isHovered
+                        ? '-translate-y-1 border-primary-border bg-accent/70 text-foreground shadow-lg'
+                        : 'border-border bg-background text-muted-foreground'
+                  }`}
+                  data-testid={`tab-product-${item.id}`}
+                >
+                  <span className="flex items-center justify-between gap-3">
+                    <span className={`flex h-8 w-8 items-center justify-center rounded-lg transition-all duration-300 ${
+                      isSelected || isHovered
+                        ? 'scale-110 rotate-3 bg-primary text-primary-foreground'
+                        : 'bg-muted text-primary'
+                    }`}>
+                      <Icon size={16} strokeWidth={1.9} />
+                    </span>
+                    <span className="text-[10px] font-bold tracking-[0.14em] text-primary">0{index + 1}</span>
+                  </span>
+                  <span className="mt-3 block text-sm font-bold tracking-tight">{item.label}</span>
+                  <span className="mt-1 block truncate text-[11px] opacity-75">{item.short}</span>
+                  <span className={`absolute inset-x-0 bottom-0 h-0.5 origin-left bg-primary transition-transform duration-300 ${
+                    isSelected || isHovered ? 'scale-x-100' : 'scale-x-0'
+                  }`} />
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Hero({ selectedProduct }: { selectedProduct: ProductId }) {
   const { t } = useTranslation();
   const { ref, visible } = useReveal(0.05);
   const points = t('product.hero.points', { returnObjects: true }) as unknown as string[];
+  const intro = t(`product.intros.${selectedProduct}`, { returnObjects: true }) as unknown as ProductIntro;
+  const productAnchor = selectedProduct === 'restaurant' ? '#restaurant-pos' : '#platforms';
 
   return (
     <section className="bg-background">
@@ -74,19 +163,20 @@ function Hero() {
               transform: visible ? 'translateY(0)' : 'translateY(28px)',
             }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-border bg-accent px-3 py-1.5 text-accent-foreground">
+            <div key={selectedProduct} id={`product-intro-${selectedProduct}`} role="tabpanel" className="animate-in fade-in-0 slide-in-from-bottom-3 duration-500">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent-border bg-accent px-3 py-1.5 text-accent-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span className="text-xs font-semibold tracking-wide uppercase">{t('product.hero.badge')}</span>
+                <span className="text-xs font-semibold tracking-wide uppercase">{intro.eyebrow}</span>
+              </div>
+              <h1
+                className="mt-6 max-w-3xl text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-[-0.045em] text-foreground"
+                data-testid="text-product-headline"
+              >
+                {intro.headline}
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">{intro.desc}</p>
+              <p className="mt-4 max-w-lg border-l-2 border-primary pl-4 text-sm font-semibold leading-relaxed text-foreground/80">{intro.support}</p>
             </div>
-            <h1
-              className="max-w-3xl text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.98] tracking-[-0.045em] text-foreground"
-              data-testid="text-product-headline"
-            >
-              {t('product.hero.headline1')}
-              <br />
-              <span className="text-primary">{t('product.hero.headline2')}</span>
-            </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">{t('product.hero.desc')}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/pricing"
@@ -97,11 +187,11 @@ function Hero() {
                 <ArrowRight size={16} />
               </Link>
               <a
-                href="#restaurant-pos"
+                href={productAnchor}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
                 data-testid="link-product-restaurant"
               >
-                {t('product.hero.seeHow')}
+                {intro.cta}
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -346,9 +436,12 @@ function ClosingCTA() {
 }
 
 export default function ProductPage() {
+  const [selectedProduct, setSelectedProduct] = useState<ProductId>('restaurant');
+
   return (
     <>
-      <Hero />
+      <ProductSelector selectedProduct={selectedProduct} onSelect={setSelectedProduct} />
+      <Hero selectedProduct={selectedProduct} />
       <ProductSuite />
       <RestaurantFlow />
       <PlatformCards />

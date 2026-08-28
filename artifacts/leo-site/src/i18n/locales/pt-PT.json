@@ -172,6 +172,55 @@
       "seeHow": "Explorar POS para restaurantes",
       "points": ["Criado para equipas reais", "Cresce com cada localização", "Fecho diário claro"]
     },
+    "selector": {
+      "eyebrow": "Explore por negócio",
+      "title": "Escolha a sua operação",
+      "hint": "Clique num negócio para ver o produto.",
+      "items": [
+        { "id": "restaurant", "label": "Restaurante", "short": "Da sala à cozinha" },
+        { "id": "store", "label": "Loja", "short": "Dos produtos à caixa" },
+        { "id": "warehouse", "label": "Armazém", "short": "Stock à escala" },
+        { "id": "erp", "label": "ERP", "short": "Controle toda a operação" },
+        { "id": "app", "label": "App de fidelização", "short": "Traga clientes de volta" }
+      ]
+    },
+    "intros": {
+      "restaurant": {
+        "eyebrow": "POS para restaurantes",
+        "headline": "Todo o restaurante, a funcionar como um só.",
+        "desc": "O Leo dá a cada função a vista certa no momento certo, para que os pedidos fluam do cliente para a cozinha e regressem à mesa sem erros.",
+        "support": "Caixa, cozinha, empregado e cliente num único fluxo ligado.",
+        "cta": "Ver POS para restaurantes"
+      },
+      "store": {
+        "eyebrow": "POS para lojas",
+        "headline": "Venda mais depressa. Mantenha cada prateleira clara.",
+        "desc": "Dê à sua equipa de retalho um único lugar simples para gerir produtos, stock, vendas e o fecho diário.",
+        "support": "Produtos, inventário e caixa num espaço de trabalho focado.",
+        "cta": "Ver POS para lojas"
+      },
+      "warehouse": {
+        "eyebrow": "POS para armazéns",
+        "headline": "Conheça cada movimento. Trabalhe à escala.",
+        "desc": "Reúna o controlo avançado de inventário, a análise e os fluxos configuráveis para gerir o trabalho por trás de cada expedição.",
+        "support": "Visibilidade profunda do stock para operações complexas.",
+        "cta": "Ver POS para armazéns"
+      },
+      "erp": {
+        "eyebrow": "ERP personalizado",
+        "headline": "Molde o sistema ao seu negócio.",
+        "desc": "Ligue fornecedores, produtos, compras e entradas e saídas num centro de controlo criado para empresas e cadeias maiores.",
+        "support": "Uma camada operacional configurável para a forma como já trabalha.",
+        "cta": "Ver ERP personalizado"
+      },
+      "app": {
+        "eyebrow": "App de fidelização",
+        "headline": "Dê a cada cliente uma razão para voltar.",
+        "desc": "Crie uma experiência de fidelização para o seu restaurante, loja ou armazém, sempre próxima dos clientes onde quer que interajam.",
+        "support": "Uma experiência de marca nos marketplaces e na web.",
+        "cta": "Ver app de fidelização"
+      }
+    },
     "suite": {
       "eyebrow": "A suite de produtos Leo",
       "headline": "Uma plataforma, moldada à forma como trabalha.",

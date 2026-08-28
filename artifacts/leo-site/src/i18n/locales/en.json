@@ -172,6 +172,55 @@
       "seeHow": "Explore restaurant POS",
       "points": ["Built for real teams", "Grows with every location", "Clear daily close"]
     },
+    "selector": {
+      "eyebrow": "Browse by business",
+      "title": "Choose your operation",
+      "hint": "Click a business to see its product.",
+      "items": [
+        { "id": "restaurant", "label": "Restaurant", "short": "Front of house to kitchen" },
+        { "id": "store", "label": "Store", "short": "Products to checkout" },
+        { "id": "warehouse", "label": "Warehouse", "short": "Stock at scale" },
+        { "id": "erp", "label": "ERP", "short": "Control every operation" },
+        { "id": "app", "label": "Loyalty app", "short": "Bring customers back" }
+      ]
+    },
+    "intros": {
+      "restaurant": {
+        "eyebrow": "Restaurant POS",
+        "headline": "The whole restaurant, moving as one.",
+        "desc": "Leo gives every role the right view at the right moment, so orders move cleanly from the guest to the kitchen and back to the table.",
+        "support": "Cashier, kitchen, server, and customer in one connected flow.",
+        "cta": "See restaurant POS"
+      },
+      "store": {
+        "eyebrow": "Store POS",
+        "headline": "Sell faster. Keep every shelf clear.",
+        "desc": "Give your retail team one simple place to manage products, stock, checkout, and the daily close.",
+        "support": "Product, inventory, and checkout in one focused workspace.",
+        "cta": "See store POS"
+      },
+      "warehouse": {
+        "eyebrow": "Warehouse POS",
+        "headline": "Know every movement. Work at scale.",
+        "desc": "Bring advanced inventory control, analysis, and configurable workflows together for the work behind every shipment.",
+        "support": "Deep stock visibility for complex product operations.",
+        "cta": "See warehouse POS"
+      },
+      "erp": {
+        "eyebrow": "Custom ERP",
+        "headline": "Shape the system around your business.",
+        "desc": "Connect suppliers, products, purchasing, inbound and outbound work in a control centre built for larger companies and chains.",
+        "support": "A configurable operating layer for the way you already work.",
+        "cta": "See custom ERP"
+      },
+      "app": {
+        "eyebrow": "Loyalty app",
+        "headline": "Give every customer a reason to return.",
+        "desc": "Create a loyalty experience for your restaurant, store, or warehouse that stays close wherever customers choose to engage.",
+        "support": "One branded customer experience across app stores and the web.",
+        "cta": "See loyalty app"
+      }
+    },
     "suite": {
       "eyebrow": "The Leo product suite",
       "headline": "One platform, shaped for the way you operate.",
