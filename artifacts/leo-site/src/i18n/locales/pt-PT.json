@@ -221,6 +221,93 @@
         "cta": "Ver app de fidelização"
       }
     },
+    "details": {
+      "store": {
+        "eyebrow": "POS para lojas",
+        "headline": "Uma caixa mais rápida e uma loja mais clara.",
+        "desc": "Dê à sua equipa de retalho um único lugar simples para gerir produtos, stock, vendas e o fecho diário.",
+        "stats": [
+          { "value": "01", "label": "catálogo de produtos claro" },
+          { "value": "24/7", "label": "visibilidade do stock" },
+          { "value": "1", "label": "vista para o fecho diário" }
+        ],
+        "workflowTitle": "Do armazém à venda",
+        "workflow": [
+          { "title": "Prepare a prateleira", "desc": "Mantenha produtos, preços, variantes e níveis de stock claros para toda a equipa." },
+          { "title": "Faça a venda", "desc": "Passe rapidamente da pesquisa do produto para a caixa, com um fluxo tranquilo." },
+          { "title": "Feche com confiança", "desc": "Reveja o dia com um resumo simples que torna o próximo turno mais fácil." }
+        ],
+        "featuresTitle": "Criado para o retalho diário",
+        "features": [
+          "Pesquisa rápida por produto e código de barras",
+          "Stock atualizado à medida que vende",
+          "Resumos de fim de dia por e-mail"
+        ],
+        "calloutTitle": "Feito para o ritmo do retalho.",
+        "calloutDesc": "Mantenha a loja em movimento sem perder de vista o que vende, o que resta e o que precisa de atenção."
+      },
+      "warehouse": {
+        "eyebrow": "POS para armazéns",
+        "headline": "Conheça cada movimento. Trabalhe à escala.",
+        "desc": "Reúna o controlo avançado de inventário, a análise e os fluxos configuráveis para gerir o trabalho por trás de cada expedição.",
+        "stats": [
+          { "value": "360°", "label": "visão de cada movimento" },
+          { "value": "20+", "label": "fluxos operacionais" }
+        ],
+        "workflowTitle": "O ciclo de movimento do stock",
+        "workflow": [
+          { "title": "Receba", "desc": "Registe produtos, quantidades e dados do fornecedor à medida que chegam." },
+          { "title": "Organize", "desc": "Mantenha localizações, lotes e stock disponível visíveis em toda a operação." },
+          { "title": "Mova", "desc": "Acompanhe transferências e movimentos internos sem perder o histórico." },
+          { "title": "Expedite", "desc": "Envie os produtos certos com um registo claro de cada saída." }
+        ],
+        "featuresTitle": "Controlo sem adivinhações",
+        "features": [
+          "Fluxos de inventário configuráveis",
+          "Análise de produtos e movimentos",
+          "Registos claros de entradas e saídas"
+        ]
+      },
+      "erp": {
+        "eyebrow": "ERP personalizado",
+        "headline": "Molde o sistema ao seu negócio.",
+        "desc": "Ligue fornecedores, produtos, compras e entradas e saídas num centro de controlo criado para empresas e cadeias maiores.",
+        "modulesTitle": "A sua operação, ligada",
+        "modules": [
+          { "title": "Fornecedores", "desc": "Reúna relações com fornecedores, compras e aprovisionamento numa única vista." },
+          { "title": "Produtos", "desc": "Crie uma base de produtos fiável para cada localização, canal e equipa." },
+          { "title": "Entradas", "desc": "Coordene o que chega, quando chega e onde deve ficar." },
+          { "title": "Saídas", "desc": "Dê a cada expedição um responsável, estado e histórico operacional claros." }
+        ],
+        "featuresTitle": "Moldado às suas regras",
+        "features": [
+          "Funções e fluxos configuráveis",
+          "Uma vista partilhada entre empresas e localizações",
+          "Relatórios alinhados com a sua operação"
+        ],
+        "calloutTitle": "Um centro de controlo, à sua maneira.",
+        "calloutDesc": "Comece pelos processos mais importantes e molde o sistema à medida que o seu negócio cresce."
+      },
+      "app": {
+        "eyebrow": "App de fidelização",
+        "headline": "Dê a cada cliente uma razão para voltar.",
+        "desc": "Crie uma experiência de fidelização para o seu restaurante, loja ou armazém, sempre próxima dos clientes onde quer que interajam.",
+        "journeyTitle": "Um caminho simples de volta à sua marca",
+        "journey": [
+          { "title": "Descubra", "desc": "Encontre clientes na web, numa loja de aplicações ou através de um QR code na caixa." },
+          { "title": "Ganhe", "desc": "Faça com que cada visita valha a pena com pontos, recompensas e progresso visível." },
+          { "title": "Regresse", "desc": "Dê às pessoas uma razão clara para escolherem o seu negócio uma e outra vez." }
+        ],
+        "benefitsTitle": "Uma experiência de fidelização que acompanha",
+        "benefits": [
+          "A sua marca, a sua experiência de cliente",
+          "Pontos e recompensas sem cartões em papel",
+          "Disponível na web e no telemóvel"
+        ],
+        "calloutTitle": "Fique próximo depois da venda.",
+        "calloutDesc": "Transforme uma visita numa relação com uma experiência que parece a sua marca, não uma app genérica."
+      }
+    },
     "suite": {
       "eyebrow": "A suite de produtos Leo",
       "headline": "Uma plataforma, moldada à forma como trabalha.",

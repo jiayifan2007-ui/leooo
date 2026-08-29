@@ -3,11 +3,18 @@ import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import {
   ArrowRight,
+  BarChart3,
+  Boxes,
   Check,
   ChefHat,
+  CircleCheck,
   ClipboardList,
   Database,
+  Gift,
   Globe2,
+  Heart,
+  Layers3,
+  ListChecks,
   Package,
   Printer,
   QrCode,
@@ -20,6 +27,7 @@ import {
   Truck,
   UsersRound,
   Warehouse,
+  Workflow,
 } from 'lucide-react';
 import POSMockup from '@/components/POSMockup';
 
@@ -46,6 +54,16 @@ type ProductIntro = {
   desc: string;
   support: string;
   cta: string;
+};
+
+type DetailStat = {
+  value: string;
+  label: string;
+};
+
+type DetailItem = {
+  title: string;
+  desc: string;
 };
 
 function useReveal(threshold = 0.15) {
@@ -87,7 +105,7 @@ function ProductSelector({
   const icons = [ChefHat, Store, Warehouse, Database, Smartphone];
 
   return (
-    <section className="border-y border-border bg-card pt-16" aria-label={t('product.selector.eyebrow')}>
+    <section id="products" className="border-y border-border bg-card pt-16" aria-label={t('product.selector.eyebrow')}>
       <div className="max-w-6xl mx-auto px-6 py-4 md:py-5">
         <div className="flex items-center justify-between gap-5">
           <div className="hidden shrink-0 lg:block">
@@ -150,7 +168,14 @@ function Hero({ selectedProduct }: { selectedProduct: ProductId }) {
   const { ref, visible } = useReveal(0.05);
   const points = t('product.hero.points', { returnObjects: true }) as unknown as string[];
   const intro = t(`product.intros.${selectedProduct}`, { returnObjects: true }) as unknown as ProductIntro;
-  const productAnchor = selectedProduct === 'restaurant' ? '#restaurant-pos' : '#platforms';
+  const productAnchors: Record<ProductId, string> = {
+    restaurant: '#restaurant-pos',
+    store: '#store-pos',
+    warehouse: '#warehouse-pos',
+    erp: '#custom-erp',
+    app: '#loyalty-app',
+  };
+  const productAnchor = productAnchors[selectedProduct];
 
   return (
     <section className="bg-background">
@@ -277,7 +302,7 @@ function RestaurantFlow() {
   ];
 
   return (
-    <section id="restaurant-pos" className="bg-sidebar py-24 md:py-28">
+    <section id="restaurant-pos" className="bg-sidebar py-24 md:py-28" data-testid="section-restaurant-detail">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
           <div>
@@ -348,6 +373,285 @@ function RestaurantFlow() {
       </div>
     </section>
   );
+}
+
+function StoreDetail() {
+  const { t } = useTranslation();
+  const detail = t('product.details.store', { returnObjects: true }) as unknown as {
+    eyebrow: string;
+    headline: string;
+    desc: string;
+    stats: DetailStat[];
+    workflowTitle: string;
+    workflow: DetailItem[];
+    featuresTitle: string;
+    features: string[];
+    calloutTitle: string;
+    calloutDesc: string;
+  };
+
+  return (
+    <section id="store-pos" className="bg-background py-24 md:py-28" data-testid="section-store-detail">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[1fr_0.9fr] gap-12 items-end">
+          <div className="max-w-2xl">
+            <Eyebrow>{detail.eyebrow}</Eyebrow>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight tracking-[-0.04em] text-foreground">
+              {detail.headline}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{detail.desc}</p>
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            {detail.stats.map((stat) => (
+              <div key={stat.label} className="rounded-xl border border-border bg-card p-4">
+                <p className="text-3xl font-bold tracking-tight text-foreground">{stat.value}</p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-14 rounded-2xl border border-primary-border bg-accent p-6 md:p-8">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+              <Store size={20} />
+            </span>
+            <h3 className="text-lg font-bold text-accent-foreground">{detail.workflowTitle}</h3>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 gap-4">
+            {detail.workflow.map((item, index) => (
+              <div key={item.title} className="rounded-xl border border-accent-border bg-background p-5">
+                <span className="text-xs font-bold tracking-[0.14em] text-primary">0{index + 1}</span>
+                <h4 className="mt-8 font-bold text-foreground">{item.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-6 grid md:grid-cols-[0.7fr_1.3fr] gap-5 items-stretch">
+          <div className="rounded-2xl bg-sidebar p-7">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{detail.featuresTitle}</p>
+            <p className="mt-4 text-xl font-bold leading-snug text-sidebar-foreground">{detail.calloutTitle}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{detail.calloutDesc}</p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            {detail.features.map((feature) => (
+              <div key={feature} className="flex gap-3 rounded-xl border border-border bg-card p-5">
+                <CircleCheck size={18} className="mt-0.5 shrink-0 text-primary" />
+                <p className="text-sm leading-relaxed text-foreground">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WarehouseDetail() {
+  const { t } = useTranslation();
+  const detail = t('product.details.warehouse', { returnObjects: true }) as unknown as {
+    eyebrow: string;
+    headline: string;
+    desc: string;
+    stats: DetailStat[];
+    workflowTitle: string;
+    workflow: DetailItem[];
+    featuresTitle: string;
+    features: string[];
+  };
+
+  return (
+    <section id="warehouse-pos" className="bg-sidebar py-24 md:py-28" data-testid="section-warehouse-detail">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-12 items-start">
+          <div>
+            <Eyebrow>{detail.eyebrow}</Eyebrow>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight tracking-[-0.04em] text-sidebar-foreground">
+              {detail.headline}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{detail.desc}</p>
+            <div className="mt-8 grid grid-cols-2 gap-3">
+              {detail.stats.map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-sidebar-border bg-sidebar-accent p-4">
+                  <p className="text-3xl font-bold text-sidebar-foreground">{stat.value}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-sidebar-border bg-sidebar-accent p-5 md:p-7">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                <Warehouse size={20} />
+              </span>
+              <h3 className="font-bold text-sidebar-foreground">{detail.workflowTitle}</h3>
+            </div>
+            <div className="mt-6 grid sm:grid-cols-2 gap-3">
+              {detail.workflow.map((item, index) => (
+                <div key={item.title} className="rounded-xl border border-sidebar-border bg-sidebar p-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-primary">0{index + 1}</span>
+                    <Boxes size={17} className="text-primary" />
+                  </div>
+                  <h4 className="mt-7 font-bold text-sidebar-foreground">{item.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="mt-10">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{detail.featuresTitle}</p>
+          <div className="mt-4 grid md:grid-cols-3 gap-3">
+            {detail.features.map((feature) => (
+              <div key={feature} className="flex gap-3 rounded-xl border border-sidebar-border bg-sidebar-accent p-5">
+                <BarChart3 size={19} className="mt-0.5 shrink-0 text-primary" />
+                <p className="text-sm leading-relaxed text-sidebar-foreground">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ErpDetail() {
+  const { t } = useTranslation();
+  const detail = t('product.details.erp', { returnObjects: true }) as unknown as {
+    eyebrow: string;
+    headline: string;
+    desc: string;
+    modulesTitle: string;
+    modules: DetailItem[];
+    featuresTitle: string;
+    features: string[];
+    calloutTitle: string;
+    calloutDesc: string;
+  };
+
+  return (
+    <section id="custom-erp" className="bg-card py-24 md:py-28" data-testid="section-erp-detail">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-3xl">
+          <Eyebrow>{detail.eyebrow}</Eyebrow>
+          <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight tracking-[-0.04em] text-foreground">
+            {detail.headline}
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{detail.desc}</p>
+        </div>
+        <div className="mt-12 grid lg:grid-cols-[0.65fr_1.35fr] gap-5">
+          <div className="rounded-2xl bg-sidebar p-7">
+            <Layers3 size={28} className="text-primary" />
+            <p className="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-primary">{detail.modulesTitle}</p>
+            <p className="mt-4 text-2xl font-bold leading-tight text-sidebar-foreground">{detail.calloutTitle}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{detail.calloutDesc}</p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {detail.modules.map((module, index) => (
+              <div key={module.title} className="rounded-2xl border border-border bg-background p-6">
+                <div className="flex items-center justify-between">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+                    <Workflow size={17} />
+                  </span>
+                  <span className="text-xs font-bold tracking-[0.14em] text-primary">0{index + 1}</span>
+                </div>
+                <h3 className="mt-8 text-lg font-bold text-foreground">{module.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{module.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-6 grid md:grid-cols-3 gap-3">
+          {detail.features.map((feature) => (
+            <div key={feature} className="flex gap-3 rounded-xl border border-border bg-background p-5">
+              <ListChecks size={19} className="mt-0.5 shrink-0 text-primary" />
+              <p className="text-sm leading-relaxed text-foreground">{feature}</p>
+            </div>
+          ))}
+        </div>
+        </div>
+    </section>
+  );
+}
+
+function LoyaltyDetail() {
+  const { t } = useTranslation();
+  const detail = t('product.details.app', { returnObjects: true }) as unknown as {
+    eyebrow: string;
+    headline: string;
+    desc: string;
+    journeyTitle: string;
+    journey: DetailItem[];
+    benefitsTitle: string;
+    benefits: string[];
+    calloutTitle: string;
+    calloutDesc: string;
+  };
+
+  return (
+    <section id="loyalty-app" className="bg-background py-24 md:py-28" data-testid="section-app-detail">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-[1fr_0.85fr] gap-12 items-end">
+          <div className="max-w-2xl">
+            <Eyebrow>{detail.eyebrow}</Eyebrow>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight tracking-[-0.04em] text-foreground">
+              {detail.headline}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{detail.desc}</p>
+          </div>
+          <div className="rounded-2xl border border-primary-border bg-accent p-7">
+            <Heart size={28} className="text-primary" />
+            <p className="mt-7 text-xl font-bold text-accent-foreground">{detail.calloutTitle}</p>
+            <p className="mt-3 text-sm leading-relaxed text-accent-foreground">{detail.calloutDesc}</p>
+          </div>
+        </div>
+        <div className="mt-14 rounded-2xl bg-sidebar p-6 md:p-8">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+              <Gift size={20} />
+            </span>
+            <h3 className="font-bold text-sidebar-foreground">{detail.journeyTitle}</h3>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 gap-4">
+            {detail.journey.map((item, index) => (
+              <div key={item.title} className="rounded-xl border border-sidebar-border bg-sidebar-accent p-5">
+                <span className="text-xs font-bold tracking-[0.14em] text-primary">0{index + 1}</span>
+                <h4 className="mt-8 font-bold text-sidebar-foreground">{item.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-6">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{detail.benefitsTitle}</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {detail.benefits.map((benefit) => (
+              <span key={benefit} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2.5 text-sm font-medium text-foreground">
+                <Smartphone size={15} className="text-primary" />
+                {benefit}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProductDetails({ selectedProduct }: { selectedProduct: ProductId }) {
+  switch (selectedProduct) {
+    case 'restaurant':
+      return <RestaurantFlow />;
+    case 'store':
+      return <StoreDetail />;
+    case 'warehouse':
+      return <WarehouseDetail />;
+    case 'erp':
+      return <ErpDetail />;
+    case 'app':
+      return <LoyaltyDetail />;
+  }
 }
 
 function PlatformCards() {
@@ -442,9 +746,9 @@ export default function ProductPage() {
     <>
       <ProductSelector selectedProduct={selectedProduct} onSelect={setSelectedProduct} />
       <Hero selectedProduct={selectedProduct} />
-      <ProductSuite />
-      <RestaurantFlow />
-      <PlatformCards />
+      <div key={selectedProduct} className="animate-in fade-in-0 duration-500">
+        <ProductDetails selectedProduct={selectedProduct} />
+      </div>
       <ClosingCTA />
     </>
   );

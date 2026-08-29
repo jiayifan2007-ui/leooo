@@ -221,6 +221,93 @@
         "cta": "See loyalty app"
       }
     },
+    "details": {
+      "store": {
+        "eyebrow": "Store POS",
+        "headline": "A faster counter and a clearer shop floor.",
+        "desc": "Give your retail team one simple place to manage products, stock, checkout, and the daily close.",
+        "stats": [
+          { "value": "01", "label": "clear product catalogue" },
+          { "value": "24/7", "label": "stock visibility" },
+          { "value": "1", "label": "daily view to close" }
+        ],
+        "workflowTitle": "From stockroom to sale",
+        "workflow": [
+          { "title": "Set the shelf", "desc": "Keep products, prices, variants, and stock levels clear for the whole team." },
+          { "title": "Make the sale", "desc": "Move from product search to checkout quickly, with a calm flow at the counter." },
+          { "title": "Close with confidence", "desc": "Review the day with a simple summary that makes the next shift easier." }
+        ],
+        "featuresTitle": "Built for everyday retail",
+        "features": [
+          "Fast product and barcode search",
+          "Stock updates as sales happen",
+          "End-of-day email summaries"
+        ],
+        "calloutTitle": "Made for the rhythm of retail.",
+        "calloutDesc": "Keep the front of house moving without losing sight of what is selling, what is left, or what needs attention."
+      },
+      "warehouse": {
+        "eyebrow": "Warehouse POS",
+        "headline": "Know every movement. Work at scale.",
+        "desc": "Bring advanced inventory control, analysis, and configurable workflows together for the work behind every shipment.",
+        "stats": [
+          { "value": "360°", "label": "view of every movement" },
+          { "value": "20+", "label": "operational workflows" }
+        ],
+        "workflowTitle": "The stock movement loop",
+        "workflow": [
+          { "title": "Receive", "desc": "Register incoming products, quantities, and supplier details as they arrive." },
+          { "title": "Organise", "desc": "Keep locations, batches, and available stock visible across the operation." },
+          { "title": "Move", "desc": "Track transfers and internal movements without losing the audit trail." },
+          { "title": "Dispatch", "desc": "Send the right products out with a clear record of every outbound action." }
+        ],
+        "featuresTitle": "Control without guesswork",
+        "features": [
+          "Configurable inventory workflows",
+          "Analysis for products and movements",
+          "Clear inbound and outbound records"
+        ]
+      },
+      "erp": {
+        "eyebrow": "Custom ERP",
+        "headline": "Shape the system around your business.",
+        "desc": "Connect suppliers, products, purchasing, inbound and outbound work in a control centre built for larger companies and chains.",
+        "modulesTitle": "Your operation, connected",
+        "modules": [
+          { "title": "Suppliers", "desc": "Bring supplier relationships, purchasing, and sourcing into one shared view." },
+          { "title": "Products", "desc": "Create a reliable product foundation for every location, channel, and team." },
+          { "title": "Inbound", "desc": "Coordinate what is coming in, when it arrives, and where it belongs." },
+          { "title": "Outbound", "desc": "Give every dispatch a clear owner, status, and operational history." }
+        ],
+        "featuresTitle": "Built around your rules",
+        "features": [
+          "Configurable roles and workflows",
+          "A shared view across companies and locations",
+          "Reporting that matches your operation"
+        ],
+        "calloutTitle": "One control centre, your way.",
+        "calloutDesc": "Start with the processes that matter most, then shape the system as your business grows."
+      },
+      "app": {
+        "eyebrow": "Loyalty app",
+        "headline": "Give every customer a reason to return.",
+        "desc": "Create a loyalty experience for your restaurant, store, or warehouse that stays close wherever customers choose to engage.",
+        "journeyTitle": "A simple path back to your brand",
+        "journey": [
+          { "title": "Discover", "desc": "Meet customers on the web, in an app store, or from a QR code at the counter." },
+          { "title": "Earn", "desc": "Make every visit feel worthwhile with points, rewards, and progress customers can see." },
+          { "title": "Return", "desc": "Give people a clear reason to choose your business again and again." }
+        ],
+        "benefitsTitle": "A loyalty experience that travels",
+        "benefits": [
+          "Your brand, your customer experience",
+          "Points and rewards without paper cards",
+          "Available on web and mobile"
+        ],
+        "calloutTitle": "Stay close after the sale.",
+        "calloutDesc": "Turn one visit into a relationship with an experience that feels like your brand, not another generic app."
+      }
+    },
     "suite": {
       "eyebrow": "The Leo product suite",
       "headline": "One platform, shaped for the way you operate.",

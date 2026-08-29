@@ -24,10 +24,11 @@ it; publish then add custom domain in publishing settings). Consumes `@workspace
 design system; no local copies of package components.
 
 **Product-page interaction:** Keep the five businesses separated in a horizontal selector directly
-below the main navigation. Selecting one must replace the intro content in place with a smooth
-transition; hover/focus must visibly lift and highlight the business option. On mobile, keep the
-selector horizontally scrollable without creating page-level overflow. **Why:** The user rejected a
-single combined product-suite narrative and explicitly asked to explore each business independently.
+below the main navigation. Selecting one must replace both the intro and the entire detail experience;
+never render the other products' detail sections underneath it. Give each product its own structured
+story, while hover/focus visibly lifts and highlights its selector option. On mobile, keep the selector
+horizontally scrollable without creating page-level overflow. **Why:** The user rejected a combined
+suite page and explicitly requires each business to feel like a separate product experience.
 
 **i18n:** site is localized via react-i18next + i18next-browser-languagedetector. Supported langs are
 `en`, `pt` (European Portuguese, pt-PT), `zh` (Mainland Mandarin, zh-CN). Resources live in
