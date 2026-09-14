@@ -2,6 +2,7 @@
   "nav": {
     "product": "Produto",
     "pricing": "Preços",
+    "security": "Segurança",
     "signIn": "Iniciar sessão",
     "startTrial": "Começar teste gratuito",
     "openMenu": "Abrir menu",
@@ -452,5 +453,92 @@
   "common": {
     "startFreeTrial": "Começar teste gratuito",
     "languageLabel": "Alterar idioma"
+  },
+  "securityPage": {
+    "hero": {
+      "eyebrow": "Segurança e confiança",
+      "headline1": "A sua operação mantém-se",
+      "headline2": "sob o seu controlo.",
+      "desc": "O Leo foi concebido para ajudar as empresas a operar com confiança: os dados dos clientes permanecem no Leo, os documentos emitidos não são apagados ou substituídos silenciosamente e as alterações importantes permanecem rastreáveis.",
+      "productCta": "Ver o produto",
+      "legalCta": "Ler o contexto legal",
+      "cardTitle": "Registos claros. Responsabilidade clara.",
+      "cardDesc": "A segurança não diz respeito apenas ao acesso. Diz também respeito a preservar o histórico por detrás das decisões da sua empresa.",
+      "cardPoints": [
+        "Os dados dos clientes não saem do Leo para criação de perfis por terceiros.",
+        "Os documentos emitidos permanecem disponíveis e auditáveis.",
+        "As correções preservam a evidência do que mudou."
+      ]
+    },
+    "pillarsEyebrow": "Os nossos compromissos",
+    "pillarsHeadline": "O essencial não pode ser negociável.",
+    "pillars": [
+      {
+        "title": "Os seus dados continuam a ser seus",
+        "desc": "O Leo não envia os dados dos seus clientes para terceiros criarem perfis ou analisarem pessoas. Os seus dados operacionais existem para gerir o seu negócio."
+      },
+      {
+        "title": "Sem eliminação silenciosa",
+        "desc": "Recibos e documentos emitidos não devem desaparecer nem ser substituídos sem um registo visível. Uma correção é uma ação nova e rastreável — não uma reescrita da história."
+      },
+      {
+        "title": "Concebido para a responsabilização",
+        "desc": "As pessoas certas conseguem perceber o que aconteceu, quando aconteceu e que ação criou o registo atual."
+      }
+    ],
+    "record": {
+      "eyebrow": "Integridade dos documentos",
+      "headline": "Um registo que pode defender.",
+      "desc": "Os registos empresariais continuam a ser importantes depois da venda. A abordagem do Leo assenta na autenticidade, integridade e legibilidade durante todo o período de conservação exigido.",
+      "noteTitle": "As correções legais são diferentes da eliminação.",
+      "noteDesc": "Um documento pode ter de ser anulado ou corrigido através do processo legal adequado. Isso não significa apagar silenciosamente o registo original ou substituí-lo sem evidência.",
+      "flowTitle": "O que significa um registo responsável",
+      "steps": [
+        {
+          "title": "Preservar",
+          "desc": "Manter a informação originalmente emitida disponível durante o período de arquivo exigido."
+        },
+        {
+          "title": "Tornar visível",
+          "desc": "Mostrar que ocorreu uma correção, anulação ou outra ação."
+        },
+        {
+          "title": "Rastrear",
+          "desc": "Manter contexto suficiente para compreender o histórico por detrás do estado atual."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Privacidade desde a conceção",
+      "headline": "Não existe um negócio paralelo com os dados dos seus clientes.",
+      "desc": "O Leo é software para gerir a sua empresa, não um negócio de análise escondido construído sobre os seus clientes.",
+      "items": [
+        "Os dados dos clientes são utilizados para suportar os serviços e fluxos de trabalho que escolher executar com o Leo.",
+        "O Leo não analisa nem cria perfis dos seus clientes para terceiros.",
+        "Não vendemos dados de clientes nem os utilizamos para criar públicos publicitários para outras empresas.",
+        "O acesso e a conservação devem respeitar a função, a finalidade e as obrigações legais aplicáveis ao registo."
+      ]
+    },
+    "fiscal": {
+      "eyebrow": "Portugal",
+      "headline": "A conformidade fiscal faz parte do produto.",
+      "desc": "Para as empresas portuguesas, o software de faturação deve apoiar a autenticidade, integridade e legibilidade dos documentos fiscais. O compromisso de produto do Leo está alinhado com esse princípio.",
+      "coimaTitle": "Qual é o risco de adulteração?",
+      "coimaDesc": "O artigo 118.º do RGIT prevê coimas potenciais de 750 € a 37.500 € pela falsificação, ocultação, destruição ou danificação deliberada de elementos fiscalmente relevantes, incluindo a alteração de programas ou dados para reduzir a receita fiscal.",
+      "disclaimer": "Este é um intervalo legal potencial, não uma penalização automática. O valor aplicável e a qualificação jurídica dependem dos factos, do impacto fiscal e das autoridades competentes. Esta página contém informação sobre o produto, não aconselhamento jurídico.",
+      "requirementTitle": "O padrão que deve esperar",
+      "requirementDesc": "As regras portuguesas exigem que a informação fiscal permaneça autêntica, íntegra e legível durante o período de arquivo, e que o software certificado preserve a evidência quando a informação é alterada."
+    },
+    "sources": {
+      "rules": "Regras de faturação da AT",
+      "rgit": "Artigo 118.º do RGIT",
+      "dl": "Decreto-Lei n.º 28/2019"
+    },
+    "cta": {
+      "eyebrow": "Opere com confiança",
+      "headline": "Uma boa operação deixa um rasto claro.",
+      "desc": "Veja como o Leo liga o trabalho no balcão, na cozinha, na loja e por detrás de cada movimento de stock.",
+      "button": "Explorar o produto"
+    }
   }
 }

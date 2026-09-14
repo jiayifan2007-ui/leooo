@@ -2,6 +2,7 @@
   "nav": {
     "product": "Product",
     "pricing": "Pricing",
+    "security": "Security",
     "signIn": "Sign in",
     "startTrial": "Start free trial",
     "openMenu": "Open menu",
@@ -452,5 +453,92 @@
   "common": {
     "startFreeTrial": "Start free trial",
     "languageLabel": "Change language"
+  },
+  "securityPage": {
+    "hero": {
+      "eyebrow": "Security and trust",
+      "headline1": "Your operation stays",
+      "headline2": "in your control.",
+      "desc": "Leo is built to help businesses run with confidence: customer data stays within Leo, issued documents are not silently erased or overwritten, and important changes remain traceable.",
+      "productCta": "See the product",
+      "legalCta": "Read the legal context",
+      "cardTitle": "Clear records. Clear responsibility.",
+      "cardDesc": "Security is not only about access. It is also about preserving the history behind the decisions your business makes.",
+      "cardPoints": [
+        "Customer data does not leave Leo for third-party profiling.",
+        "Issued documents remain available and auditable.",
+        "Corrections preserve evidence of what changed."
+      ]
+    },
+    "pillarsEyebrow": "Our commitments",
+    "pillarsHeadline": "The basics should be non-negotiable.",
+    "pillars": [
+      {
+        "title": "Your data stays yours",
+        "desc": "Leo does not send your customer data elsewhere to build profiles or analyse people for third parties. Your operational data is there to run your business."
+      },
+      {
+        "title": "No silent deletion",
+        "desc": "Issued receipts and documents should not disappear or be overwritten without a visible record. A correction is a new, traceable action—not a rewrite of history."
+      },
+      {
+        "title": "Built for accountability",
+        "desc": "The right people can understand what happened, when it happened, and which action created the current record."
+      }
+    ],
+    "record": {
+      "eyebrow": "Document integrity",
+      "headline": "A record you can stand behind.",
+      "desc": "Business records matter after the sale is over. Leo’s approach is designed around authenticity, integrity, and legibility throughout the required retention period.",
+      "noteTitle": "Legal corrections are different from deletion.",
+      "noteDesc": "A document may need to be annulled or corrected through the legally appropriate process. That does not mean silently deleting the original record or replacing it without evidence.",
+      "flowTitle": "What an accountable record means",
+      "steps": [
+        {
+          "title": "Preserve",
+          "desc": "Keep the original issued information available for the required archive period."
+        },
+        {
+          "title": "Make visible",
+          "desc": "Show that a correction, cancellation, or other action took place."
+        },
+        {
+          "title": "Trace",
+          "desc": "Keep enough context to understand the history behind the current state."
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Privacy by design",
+      "headline": "No customer-data business on the side.",
+      "desc": "Leo is software for operating your business, not a hidden analytics business built on your customers.",
+      "items": [
+        "Customer data is used to support the services and workflows you choose to run with Leo.",
+        "Leo does not analyse or profile your customers for third parties.",
+        "We do not sell customer data or use it to create advertising audiences for other companies.",
+        "Access and retention should follow the role, purpose, and legal obligations that apply to the record."
+      ]
+    },
+    "fiscal": {
+      "eyebrow": "Portugal",
+      "headline": "Fiscal compliance is part of the product.",
+      "desc": "For Portuguese businesses, invoicing software must support the authenticity, integrity, and legibility of fiscal documents. Leo’s product commitment is aligned with that principle.",
+      "coimaTitle": "What is the risk of tampering?",
+      "coimaDesc": "RGIT Article 118 describes potential fines of €750 to €37,500 for deliberate falsification, concealment, destruction, or damage of fiscally relevant elements, including altering programs or data to reduce tax revenue.",
+      "disclaimer": "This is a potential legal range, not an automatic penalty. The applicable amount and legal classification depend on the facts, tax impact, and competent authorities. This page is product information, not legal advice.",
+      "requirementTitle": "The standard to expect",
+      "requirementDesc": "Portuguese rules require fiscal information to remain authentic, integral, and legible during the archive period, and certified software must preserve evidence when information is changed."
+    },
+    "sources": {
+      "rules": "AT invoicing rules",
+      "rgit": "RGIT Article 118",
+      "dl": "Decree-Law 28/2019"
+    },
+    "cta": {
+      "eyebrow": "Run with confidence",
+      "headline": "Good operations leave a clear trail.",
+      "desc": "See how Leo connects the work on the counter, in the kitchen, across the shop floor, and behind every movement of stock.",
+      "button": "Explore the product"
+    }
   }
 }

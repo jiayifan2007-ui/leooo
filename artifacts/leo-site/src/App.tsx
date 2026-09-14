@@ -14,6 +14,7 @@ import {
 const HomePage = lazy(() => import('@/pages/HomePage'));
 const ProductPage = lazy(() => import('@/pages/ProductPage'));
 const PricingPage = lazy(() => import('@/pages/PricingPage'));
+const SecurityPage = lazy(() => import('@/pages/SecurityPage'));
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ function Router() {
             <Route path="/" component={HomePage} />
             <Route path="/product" component={ProductPage} />
             <Route path="/pricing" component={PricingPage} />
+            <Route path="/security" component={SecurityPage} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>

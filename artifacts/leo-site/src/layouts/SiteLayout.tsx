@@ -27,6 +27,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
   const navLinks = [
     { label: t('nav.product'), href: '/product' },
     { label: t('nav.pricing'), href: '/pricing' },
+    { label: t('nav.security'), href: '/security' },
   ];
 
   return (
@@ -204,10 +205,10 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
               {
                 heading: t('footer.legalHeading'),
                 links: [
-                  { label: t('footer.privacyPolicy'), href: '#' },
-                  { label: t('footer.termsOfService'), href: '#' },
-                  { label: t('footer.security'), href: '#' },
-                  { label: t('footer.gdpr'), href: '#' },
+                  { label: t('footer.privacyPolicy'), href: '/security#privacy' },
+                  { label: t('footer.termsOfService'), href: '/security#legal' },
+                  { label: t('footer.security'), href: '/security' },
+                  { label: t('footer.gdpr'), href: '/security#privacy' },
                 ],
               },
             ].map((col) => (
@@ -249,15 +250,15 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
                 { key: t('footer.terms'), id: 'terms' },
                 { key: t('footer.cookies'), id: 'cookies' },
               ].map((item) => (
-                <a
+                <Link
                   key={item.id}
-                  href="#"
+                  href={`/security#${item.id}`}
                   className="text-xs hover:opacity-80 transition-opacity"
                   style={{ color: '#44403C' }}
                   data-testid={`link-legal-${item.id}`}
                 >
                   {item.key}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
