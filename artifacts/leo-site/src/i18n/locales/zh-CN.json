@@ -412,6 +412,80 @@
         "自定义报表"
       ]
     },
+    "comparison": {
+      "start": "查看套餐",
+      "eyebrow": "对比套餐",
+      "headline": "一张表，清晰选择。",
+      "desc": "并排比较 Leo 的产品，选择套餐，只添加运营真正需要的硬件。",
+      "productsLabel": "产品",
+      "selected": "已选择",
+      "included": "已包含",
+      "notIncluded": "未包含",
+      "custom": "定制",
+      "detailsLabel": "包含内容",
+      "hardwareEyebrow": "可选硬件",
+      "hardwareHeadline": "添加运营所需的设备。",
+      "hardwareDesc": "硬件为可选的一次性购买。将设备加入估算，同时始终清楚了解基础套餐。",
+      "hardwareProduct": "硬件",
+      "hardwarePrice": "价格",
+      "hardwareType": "计费方式",
+      "hardwareAction": "方案",
+      "oneTime": "一次性",
+      "add": "添加",
+      "remove": "移除",
+      "summaryEyebrow": "你的估算",
+      "summaryHeadline": "开始前先看清总价。",
+      "noneSelected": "未选择可选硬件",
+      "firstMonth": "预计首月费用",
+      "recurring": "之后每月",
+      "products": {
+        "restaurant": {
+          "name": "餐厅 POS",
+          "desc": "让收银台、厨房、服务员和顾客保持同步。",
+          "details": [
+            "收银、桌台和分单流程",
+            "厨房打印机和平板路由",
+            "服务员平板及顾客扫码点单"
+          ]
+        },
+        "store": {
+          "name": "商店 POS",
+          "desc": "通过清晰的零售流程，让商品从库存走向销售。",
+          "details": [
+            "商品、价格和条码管理",
+            "销售发生时实时查看库存",
+            "简单的零售日结报表"
+          ]
+        },
+        "warehouse": {
+          "name": "仓储 POS",
+          "desc": "掌控每次发货背后的每一次库存流转。",
+          "details": [
+            "收货、整理、移动和发货流程",
+            "商品和库存移动分析",
+            "清晰的入库和出库记录"
+          ]
+        },
+        "erp": {
+          "name": "定制 ERP",
+          "desc": "连接大型运营背后的规则、供应商和工作流程。",
+          "details": [
+            "供应商和采购管理",
+            "可配置的入库和出库流程",
+            "跨公司和门店的共享报表"
+          ]
+        },
+        "loyalty": {
+          "name": "会员忠诚度应用",
+          "desc": "让顾客有简单的理由发现、积累并再次回来。",
+          "details": [
+            "在网页和移动端呈现你的品牌",
+            "积分、奖励和可见的成长进度",
+            "连接销售后的顾客体验"
+          ]
+        }
+      }
+    },
     "builder": {
       "eyebrow": "定制你的方案",
       "headline1": "先选择套餐。",

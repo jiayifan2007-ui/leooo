@@ -412,6 +412,80 @@
         "Custom reporting"
       ]
     },
+    "comparison": {
+      "start": "See the plans",
+      "eyebrow": "Compare the plans",
+      "headline": "One table. Clear choices.",
+      "desc": "Compare Leo’s products side by side, choose a plan, and add only the hardware your operation needs.",
+      "productsLabel": "Products",
+      "selected": "Selected",
+      "included": "Included",
+      "notIncluded": "Not included",
+      "custom": "Custom",
+      "detailsLabel": "What's included",
+      "hardwareEyebrow": "Optional hardware",
+      "hardwareHeadline": "Add what your operation needs.",
+      "hardwareDesc": "Hardware is optional and purchased once. Add items to your estimate without losing sight of the plan underneath.",
+      "hardwareProduct": "Hardware",
+      "hardwarePrice": "Price",
+      "hardwareType": "Billing",
+      "hardwareAction": "Setup",
+      "oneTime": "One-time",
+      "add": "Add",
+      "remove": "Remove",
+      "summaryEyebrow": "Your estimate",
+      "summaryHeadline": "A clear total before you start.",
+      "noneSelected": "No optional hardware selected",
+      "firstMonth": "Estimated first month",
+      "recurring": "Then each month",
+      "products": {
+        "restaurant": {
+          "name": "Restaurant POS",
+          "desc": "Keep cashier, kitchen, server, and guest in sync.",
+          "details": [
+            "Cashier, table, and split-bill workflows",
+            "Kitchen printer and tablet routing",
+            "Server tablet and guest QR ordering"
+          ]
+        },
+        "store": {
+          "name": "Store POS",
+          "desc": "Move from stockroom to sale with a clear retail workflow.",
+          "details": [
+            "Product, price, and barcode management",
+            "Live stock visibility as sales happen",
+            "Simple end-of-day retail summaries"
+          ]
+        },
+        "warehouse": {
+          "name": "Warehouse POS",
+          "desc": "Control every movement behind every shipment.",
+          "details": [
+            "Receive, organise, move, and dispatch workflows",
+            "Product and movement analysis",
+            "Clear inbound and outbound records"
+          ]
+        },
+        "erp": {
+          "name": "Custom ERP",
+          "desc": "Connect the rules, suppliers, and processes behind larger operations.",
+          "details": [
+            "Supplier and purchasing control",
+            "Configurable inbound and outbound flows",
+            "Shared reporting across companies and locations"
+          ]
+        },
+        "loyalty": {
+          "name": "Loyalty app",
+          "desc": "Give customers a simple reason to discover, earn, and return.",
+          "details": [
+            "Your brand across web and mobile",
+            "Points, rewards, and visible progress",
+            "Connected customer experience after the sale"
+          ]
+        }
+      }
+    },
     "builder": {
       "eyebrow": "Build your setup",
       "headline1": "Start with the plan.",

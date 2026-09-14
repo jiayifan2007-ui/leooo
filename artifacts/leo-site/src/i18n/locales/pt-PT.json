@@ -412,6 +412,80 @@
         "Relatórios personalizados"
       ]
     },
+    "comparison": {
+      "start": "Ver os planos",
+      "eyebrow": "Compare os planos",
+      "headline": "Uma tabela. Escolhas claras.",
+      "desc": "Compare os produtos Leo lado a lado, escolha um plano e adicione apenas o hardware de que a sua operação precisa.",
+      "productsLabel": "Produtos",
+      "selected": "Selecionado",
+      "included": "Incluído",
+      "notIncluded": "Não incluído",
+      "custom": "Personalizado",
+      "detailsLabel": "O que está incluído",
+      "hardwareEyebrow": "Hardware opcional",
+      "hardwareHeadline": "Adicione o que a sua operação precisa.",
+      "hardwareDesc": "O hardware é opcional e comprado uma única vez. Adicione itens à sua estimativa sem perder de vista o plano escolhido.",
+      "hardwareProduct": "Hardware",
+      "hardwarePrice": "Preço",
+      "hardwareType": "Faturação",
+      "hardwareAction": "Configuração",
+      "oneTime": "Compra única",
+      "add": "Adicionar",
+      "remove": "Remover",
+      "summaryEyebrow": "A sua estimativa",
+      "summaryHeadline": "Um total claro antes de começar.",
+      "noneSelected": "Nenhum hardware opcional selecionado",
+      "firstMonth": "Primeiro mês estimado",
+      "recurring": "Depois, por mês",
+      "products": {
+        "restaurant": {
+          "name": "POS para restaurantes",
+          "desc": "Mantenha balcão, cozinha, sala e cliente em sintonia.",
+          "details": [
+            "Fluxos de caixa, mesas e contas divididas",
+            "Encaminhamento para impressoras e tablets de cozinha",
+            "Pedidos pelo tablet do empregado e QR do cliente"
+          ]
+        },
+        "store": {
+          "name": "POS para lojas",
+          "desc": "Passe do armazém à venda com um fluxo de retalho claro.",
+          "details": [
+            "Gestão de produtos, preços e códigos de barras",
+            "Visibilidade do stock à medida que as vendas acontecem",
+            "Resumos simples de fecho diário para retalho"
+          ]
+        },
+        "warehouse": {
+          "name": "POS para armazéns",
+          "desc": "Controle cada movimento por detrás de cada expedição.",
+          "details": [
+            "Fluxos de receção, organização, movimentação e expedição",
+            "Análise de produtos e movimentos",
+            "Registos claros de entradas e saídas"
+          ]
+        },
+        "erp": {
+          "name": "ERP personalizado",
+          "desc": "Ligue regras, fornecedores e processos de operações maiores.",
+          "details": [
+            "Controlo de fornecedores e compras",
+            "Fluxos configuráveis de entradas e saídas",
+            "Relatórios partilhados entre empresas e localizações"
+          ]
+        },
+        "loyalty": {
+          "name": "Aplicação de fidelização",
+          "desc": "Dê aos clientes uma razão simples para descobrir, ganhar e voltar.",
+          "details": [
+            "A sua marca na web e no mobile",
+            "Pontos, recompensas e progresso visível",
+            "Experiência do cliente ligada depois da venda"
+          ]
+        }
+      }
+    },
     "builder": {
       "eyebrow": "Construa a sua configuração",
       "headline1": "Comece pelo plano.",

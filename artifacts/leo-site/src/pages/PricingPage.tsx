@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
@@ -267,7 +267,7 @@ export default function PricingPage() {
                 {products.map((product) => {
                   const expanded = expandedProduct === product.id;
                   return (
-                    <>
+                    <Fragment key={product.id}>
                       <tr key={product.id} className="border-t border-stone-300 bg-[#F5F5F4] transition-colors hover:bg-white">
                         <th scope="row" className="p-0 align-top">
                           <button
@@ -331,7 +331,7 @@ export default function PricingPage() {
                           </td>
                         </tr>
                       )}
-                    </>
+                    </Fragment>
                   );
                 })}
               </tbody>
