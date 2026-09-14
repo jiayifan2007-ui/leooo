@@ -412,6 +412,80 @@
         "Relatórios personalizados"
       ]
     },
+    "builder": {
+      "eyebrow": "Construa a sua configuração",
+      "headline1": "Comece pelo plano.",
+      "headline2": "Dê forma ao resto.",
+      "desc": "Escolha o hardware de que a sua operação precisa hoje. Selecione um produto para ver os detalhes e acompanhe a atualização do total estimado do primeiro mês.",
+      "hardwareTitle": "Escolha o seu hardware",
+      "hardwareDesc": "Todo o hardware é uma compra única adicionada ao plano selecionado.",
+      "selected": "Selecionado",
+      "added": "Adicionado",
+      "add": "Adicionar",
+      "detailsLabel": "Detalhes do produto",
+      "summaryEyebrow": "A sua configuração Leo",
+      "summaryHeadline": "Um total claro antes de começar.",
+      "basePlan": "Plano base",
+      "monthly": "Software mensal",
+      "hardwareSelected": "Itens de hardware",
+      "hardwareTotal": "Total de hardware",
+      "firstMonth": "Primeiro mês estimado",
+      "firstMonthNote": "Inclui o plano mensal selecionado e o hardware comprado uma vez.",
+      "customNote": "O preço Empresa é ajustado à sua operação. O hardware é apresentado separadamente.",
+      "cta": "Falar sobre esta configuração"
+    },
+    "hardware": {
+      "terminal": {
+        "name": "Terminal de balcão",
+        "short": "Hardware de checkout",
+        "desc": "Um terminal POS focado num serviço rápido e fiável ao balcão.",
+        "details": [
+          "Ecrã preparado para toque",
+          "Concebido para pagamentos por cartão e numerário",
+          "Compra única de hardware"
+        ]
+      },
+      "tablet": {
+        "name": "Tablet de cozinha",
+        "short": "Operação de cozinha",
+        "desc": "Mantenha a preparação em movimento com um ecrã claro para cada estação.",
+        "details": [
+          "Fila de pedidos legível para estações movimentadas",
+          "Funciona com fluxos de trabalho de cozinha",
+          "Compra única de hardware"
+        ]
+      },
+      "printer": {
+        "name": "Impressora de recibos",
+        "short": "Documentos impressos",
+        "desc": "Imprima recibos e documentos operacionais onde a sua equipa precisa deles.",
+        "details": [
+          "Impressão rápida de recibos",
+          "Adequada para balcão e cozinha",
+          "Compra única de hardware"
+        ]
+      },
+      "scanner": {
+        "name": "Leitor de códigos de barras",
+        "short": "Pesquisa de produtos mais rápida",
+        "desc": "Passe do produto na prateleira para a venda com leitura rápida e fiável.",
+        "details": [
+          "Leitura rápida de códigos de barras",
+          "Ideal para retalho e armazém",
+          "Compra única de hardware"
+        ]
+      },
+      "display": {
+        "name": "Ecrã para o cliente",
+        "short": "Checkout virado para o cliente",
+        "desc": "Dê aos clientes uma visão clara do pedido enquanto a compra é concluída.",
+        "details": [
+          "Vista do pedido virada para o cliente",
+          "Ajuda a tornar o checkout mais transparente",
+          "Compra única de hardware"
+        ]
+      }
+    },
     "includes": {
       "eyebrow": "Todos os planos incluem",
       "items": [

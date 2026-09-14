@@ -412,6 +412,80 @@
         "Custom reporting"
       ]
     },
+    "builder": {
+      "eyebrow": "Build your setup",
+      "headline1": "Start with the plan.",
+      "headline2": "Shape the rest.",
+      "desc": "Choose the hardware your operation needs today. Select a product to see its details and watch your estimated first-month total update.",
+      "hardwareTitle": "Choose your hardware",
+      "hardwareDesc": "All hardware is a one-time purchase added to your selected plan.",
+      "selected": "Selected",
+      "added": "Added",
+      "add": "Add to setup",
+      "detailsLabel": "Product details",
+      "summaryEyebrow": "Your Leo setup",
+      "summaryHeadline": "A clear total before you start.",
+      "basePlan": "Base plan",
+      "monthly": "Monthly software",
+      "hardwareSelected": "Hardware items",
+      "hardwareTotal": "Hardware total",
+      "firstMonth": "Estimated first month",
+      "firstMonthNote": "Includes the selected monthly plan and one-time hardware.",
+      "customNote": "Enterprise pricing is tailored to your operation. Hardware is shown separately.",
+      "cta": "Talk through this setup"
+    },
+    "hardware": {
+      "terminal": {
+        "name": "Counter terminal",
+        "short": "Checkout hardware",
+        "desc": "A focused POS terminal for fast, reliable service at the counter.",
+        "details": [
+          "Touch-ready display for checkout",
+          "Built for card and cash workflows",
+          "One-time hardware purchase"
+        ]
+      },
+      "tablet": {
+        "name": "Kitchen tablet",
+        "short": "Kitchen operations",
+        "desc": "Keep preparation moving with a clear screen for every kitchen station.",
+        "details": [
+          "Readable order queue for busy stations",
+          "Works with kitchen workflows",
+          "One-time hardware purchase"
+        ]
+      },
+      "printer": {
+        "name": "Receipt printer",
+        "short": "Printed documents",
+        "desc": "Print receipts and operational documents where your team needs them.",
+        "details": [
+          "Fast receipt printing",
+          "Suitable for counter and kitchen use",
+          "One-time hardware purchase"
+        ]
+      },
+      "scanner": {
+        "name": "Barcode scanner",
+        "short": "Faster product search",
+        "desc": "Move products from shelf to sale with quick, dependable scanning.",
+        "details": [
+          "Quick barcode capture",
+          "Ideal for retail and stockroom work",
+          "One-time hardware purchase"
+        ]
+      },
+      "display": {
+        "name": "Customer display",
+        "short": "Customer-facing checkout",
+        "desc": "Give customers a clear view of their order as it is being completed.",
+        "details": [
+          "Customer-facing order view",
+          "Supports a more transparent checkout",
+          "One-time hardware purchase"
+        ]
+      }
+    },
     "includes": {
       "eyebrow": "All plans include",
       "items": [
