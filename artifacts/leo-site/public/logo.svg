@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="sphere" cx="38%" cy="20%" r="82%">
+      <stop offset="0" stop-color="#ff5154"/>
+      <stop offset="0.4" stop-color="#f51e29"/>
+      <stop offset="0.75" stop-color="#d90818"/>
+      <stop offset="1" stop-color="#a80716"/>
+    </radialGradient>
+  </defs>
+  <circle cx="512" cy="512" r="490" fill="url(#sphere)"/>
+  <text x="154" y="395" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="276" font-weight="400" letter-spacing="4" transform="rotate(17 480 400)">LEO</text>
+  <path d="M860 313 C880 396 826 504 761 597 C705 678 620 741 533 789 C478 819 416 848 385 838 C360 830 382 807 421 779 C504 719 608 672 735 612 C816 573 905 500 952 496 C995 492 1001 539 979 599 C953 672 907 744 860 760 C827 772 809 745 819 698 C830 644 852 598 886 553" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

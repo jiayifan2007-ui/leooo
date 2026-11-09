@@ -1,7 +1,7 @@
 import { type ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { useTranslation } from 'react-i18next';
-import { Menu, X, Zap, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 interface SiteLayoutProps {
@@ -45,12 +45,11 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo">
-            <div
-              className="w-7 h-7 rounded flex items-center justify-center transition-transform group-hover:scale-110"
-              style={{ backgroundColor: '#F59E0B' }}
-            >
-              <Zap size={16} color="#0C0A09" strokeWidth={2.5} />
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}logo.svg`}
+              alt=""
+              className="w-8 h-8 object-contain transition-transform group-hover:scale-110"
+            />
             <span
               className="text-lg font-bold tracking-tight"
               style={{ color: '#F59E0B', letterSpacing: '-0.02em' }}
@@ -155,12 +154,7 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div
-                  className="w-7 h-7 rounded flex items-center justify-center"
-                  style={{ backgroundColor: '#F59E0B' }}
-                >
-                  <Zap size={14} color="#0C0A09" strokeWidth={2.5} />
-                </div>
+                <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="" className="w-8 h-8 object-contain" />
                 <span
                   className="text-base font-bold tracking-tight"
                   style={{ color: '#F59E0B' }}
